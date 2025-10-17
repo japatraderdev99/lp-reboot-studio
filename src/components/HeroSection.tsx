@@ -46,6 +46,19 @@ const HeroSection = () => {
             </div>
           </div>
 
+          {/* CTA Principal */}
+          <div className="max-w-2xl mx-auto mb-12 animate-fade-in" style={{animationDelay: '0.5s'}}>
+            <Button 
+              size="lg" 
+              className="w-full bg-primary hover:bg-primary/90 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              QUERO TRANSFORMAR MINHA CRC AGORA →
+            </Button>
+            <p className="text-center text-sm text-muted-foreground mt-4">
+              ⚡ Últimas vagas disponíveis | Garantia incondicional de 7 dias
+            </p>
+          </div>
+
           {/* Benefits Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto animate-fade-in" style={{animationDelay: '0.6s'}}>
             {[
