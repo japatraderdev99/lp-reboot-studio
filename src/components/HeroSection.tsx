@@ -8,22 +8,29 @@ const HeroSection = () => {
       
       <div className="container mx-auto relative z-10">
         <div className="max-w-6xl mx-auto">
-          {/* Pre-headline */}
-          <p className="text-muted-foreground text-center mb-4 animate-fade-in">
-            ⚡ Assista esse vídeo até o final e descubra o método EXATO que as maiores redes de odontologia do Brasil usam para converter leads
-          </p>
+          {/* Badges */}
+          <div className="flex flex-wrap justify-center gap-4 mb-6 animate-fade-in">
+            <span className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold border border-primary/20">
+              ⚡ 60% mais conversão em 5 minutos
+            </span>
+            <span className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold border border-primary/20">
+              📈 Usado por 500+ clínicas
+            </span>
+            <span className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold border border-primary/20">
+              💰 R$ 2M+ faturados
+            </span>
+          </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-6 animate-slide-up">
-            Sua CRC está desperdiçando{" "}
-            <span className="text-primary">40% dos seus leads</span>
-            <br />
-            (e você está pagando por isso)
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-6 animate-slide-up leading-tight">
+            De Secretária a Máquina de Vendas:{" "}
+            <span className="text-primary">Aumente em 60% a Conversão</span>
+            {" "}da Sua Clínica em 30 Dias
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-center text-muted-foreground mb-12 max-w-4xl mx-auto animate-fade-in" style={{animationDelay: '0.2s'}}>
-            Transforme sua recepcionista em uma máquina de conversão que aumenta seu faturamento em até 60% - sem contratar ninguém novo.
+          <p className="text-xl md:text-2xl text-center text-muted-foreground mb-12 max-w-4xl mx-auto animate-fade-in leading-relaxed" style={{animationDelay: '0.2s'}}>
+            Método F5 validado em +500 clínicas: transforme leads frios em pacientes pagantes usando o sistema exato que fatura R$ 2M+/ano no mercado odontológico
           </p>
 
           {/* Video Container */}
@@ -46,30 +53,34 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* CTA Principal */}
-          <div className="max-w-2xl mx-auto mb-12 animate-fade-in" style={{animationDelay: '0.5s'}}>
+          {/* CTAs */}
+          <div className="max-w-2xl mx-auto mb-12 animate-fade-in flex flex-col sm:flex-row gap-4" style={{animationDelay: '0.5s'}}>
             <Button 
               size="lg" 
-              className="w-full bg-primary hover:bg-primary/90 text-white font-bold text-lg md:text-xl py-6 md:py-8 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="flex-1 bg-primary hover:bg-primary/90 text-white font-bold text-base md:text-lg py-6 md:py-7 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
-              QUERO TRANSFORMAR MINHA CRC AGORA →
+              Quero Converter Mais Leads →
             </Button>
-            <p className="text-center text-sm text-muted-foreground mt-4">
-              ⚡ Últimas vagas disponíveis | Garantia incondicional de 7 dias
-            </p>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="flex-1 border-primary text-primary hover:bg-primary hover:text-white font-bold text-base md:text-lg py-6 md:py-7 px-6 rounded-lg transition-all duration-300"
+            >
+              Assistir Aula Gratuita
+            </Button>
           </div>
 
           {/* Benefits Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto animate-fade-in" style={{animationDelay: '0.6s'}}>
             {[
-              "Método validado em +3.000 clínicas",
+              "Método validado em +500 clínicas",
               "Aumento de 60% na conversão comprovado",
               "Resultados em até 30 dias",
-              "Certificado F5 Estratégia"
+              "Sistema que fatura R$ 2M+/ano"
             ].map((benefit, index) => (
-              <div key={index} className="flex items-start gap-2 bg-card/50 p-4 rounded-lg border border-border">
-                <span className="text-primary mt-1">✓</span>
-                <span className="text-sm">{benefit}</span>
+              <div key={index} className="flex items-start gap-2 bg-card/50 p-4 rounded-lg border border-border hover:border-primary/50 transition-all">
+                <span className="text-primary mt-1 text-lg">✓</span>
+                <span className="text-sm font-medium">{benefit}</span>
               </div>
             ))}
           </div>

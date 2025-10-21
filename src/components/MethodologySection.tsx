@@ -2,29 +2,56 @@ import { Button } from "@/components/ui/button";
 
 const methodologySteps = [
   {
-    letter: "C",
-    title: "COMUNICAÇÃO",
-    description: "Comunicamos com o perfil exato de paciente que sua clínica precisa atrair."
+    phase: "FASE 1",
+    title: "FUNDAMENTOS",
+    module: "Módulo 1",
+    items: [
+      "ICP Real vs ICP Imaginado (pare de perseguir lead errado)",
+      "Os 3 Jogos Empresariais (adapte ao modelo da clínica)",
+      "CRC é vendedora? SIM. E te mostro como."
+    ]
   },
   {
-    letter: "H",
-    title: "HUMANIZAÇÃO",
-    description: "Posicionamos sua clínica como autoridade na sua cidade através de conteúdo estratégico e presença digital dominante."
+    phase: "FASE 2",
+    title: "CANAIS DE CONVERSÃO",
+    module: "Módulo 2",
+    items: [
+      "Script Matador: Meta/Instagram (baixo nível de consciência)",
+      "Conversão Google em 5 min (abordagem agressiva)",
+      "Cold Call & Social Selling (prospecção que funciona)"
+    ]
   },
   {
-    letter: "A",
-    title: "ANÚNCIO",
-    description: "Criamos anúncios pagos na plataforma que seu cliente consome seus serviços."
+    phase: "FASE 3",
+    title: "RAPPORT & FOLLOW-UP",
+    module: "Módulos 3 e 4",
+    items: [
+      "Regra dos 5 Minutos (+60% conversão)",
+      "Fato Novo (nunca mais mandar só 'oi, tudo bem?')",
+      "BANT & SPIN Selling (qualificação real)",
+      "13 Tipos de Conteúdo para Engajamento"
+    ]
   },
   {
-    letter: "V",
-    title: "VENDAS",
-    description: "Gestão estratégica e oportunidades de vendas para sua equipe transformar cada lead em fechamento."
+    phase: "FASE 4",
+    title: "FUNIL & NO-SHOW",
+    module: "Módulo 5",
+    items: [
+      "6 Etapas do Funil (MQL → Fechamento)",
+      "Metáfora dos Reinos (conquiste cada etapa)",
+      "Técnicas Anti-No-Show (vídeos, antes/depois, pré-avaliação)"
+    ]
   },
   {
-    letter: "I",
-    title: "INTELIGÊNCIA DE DADOS",
-    description: "Você acompanha o ROI de cada real investido em tempo real, com métricas claras e acionáveis."
+    phase: "FASE 5",
+    title: "FECHAMENTO INFALÍVEL",
+    module: "Módulo 6",
+    items: [
+      "Roteiro de Fechamento Completo",
+      "Quebra de Objeções (método do inimigo comum)",
+      "Múltiplos SIMs (micro-compromissos)",
+      "Guardião das Vendas Saudáveis"
+    ]
   }
 ];
 
@@ -34,60 +61,81 @@ const MethodologySection = () => {
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Nossa metodologia é a <span className="text-primary">CHAVE</span>
-              <br />
-              que sua clínica precisa
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              O Sistema Exato que Transforma<br />
+              <span className="text-primary">Leads em Pacientes Pagantes</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-              Aplicamos uma metodologia validada em mais de 3.000 clínicas para criar um motor de crescimento previsível para o seu negócio.
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              5 fases estruturadas que te levam de recepcionista comum a máquina de conversão
             </p>
           </div>
 
-          <div className="relative max-w-4xl mx-auto">
-            {/* Vertical Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent hidden md:block" />
-
+          <div className="relative max-w-5xl mx-auto">
             {/* Steps */}
-            <div className="space-y-8">
+            <div className="space-y-6">
               {methodologySteps.map((step, index) => (
                 <div
                   key={index}
-                  className="relative flex gap-6 items-start"
+                  className="bg-card border-2 border-border rounded-lg p-6 md:p-8 hover:border-primary/50 transition-all"
                   style={{
                     animation: 'fadeIn 0.6s ease-out forwards',
-                    animationDelay: `${index * 0.15}s`,
+                    animationDelay: `${index * 0.1}s`,
                     opacity: 0
                   }}
                 >
-                  {/* Circle with Letter */}
-                  <div className="relative z-10 flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-2xl font-bold text-white shadow-lg shadow-primary/30">
-                      {step.letter}
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="bg-primary text-white px-4 py-2 rounded-lg font-bold text-sm whitespace-nowrap">
+                      {step.phase}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl md:text-3xl font-bold text-primary mb-1">
+                        {step.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">{step.module}</p>
                     </div>
                   </div>
-
-                  {/* Content */}
-                  <div className="flex-1 bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-all">
-                    <h3 className="text-2xl font-bold mb-3 text-primary">
-                      {step.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
+                  <ul className="space-y-2 ml-4">
+                    {step.items.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-start gap-3">
+                        <span className="text-primary mt-1 flex-shrink-0">→</span>
+                        <span className="text-muted-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
+            </div>
+
+            {/* Timeline Visual */}
+            <div className="mt-12 bg-primary/10 rounded-lg p-6 border border-primary/20">
+              <h4 className="font-bold text-center mb-4">Linha do Tempo de Transformação</h4>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div>
+                  <div className="font-bold text-primary">Semana 1-2</div>
+                  <div className="text-sm text-muted-foreground">Fundamentos + Scripts</div>
+                </div>
+                <div>
+                  <div className="font-bold text-primary">Semana 3</div>
+                  <div className="text-sm text-muted-foreground">Rapport + Follow-up</div>
+                </div>
+                <div>
+                  <div className="font-bold text-primary">Semana 4</div>
+                  <div className="text-sm text-muted-foreground">Fechamento + Objeções</div>
+                </div>
+                <div>
+                  <div className="font-bold text-primary">Resultado</div>
+                  <div className="text-sm text-muted-foreground">CRC Completa</div>
+                </div>
+              </div>
             </div>
           </div>
 
           <div className="flex justify-center mt-12">
             <Button 
               size="lg" 
-              variant="outline" 
-              className="border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-6"
+              className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all hover:scale-105"
             >
-              QUERO ENTENDER ESSE MÉTODO →
+              QUERO DOMINAR ESSE MÉTODO AGORA →
             </Button>
           </div>
         </div>
