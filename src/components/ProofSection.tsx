@@ -1,195 +1,119 @@
 import { Button } from "@/components/ui/button";
-import { TrendingUp, Clock, Target, Shield, Users, Zap } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Clock, Users, Target, Shield, TrendingUp, Zap } from "lucide-react";
 
 const ProofSection = () => {
   const stats = [
-    {
-      icon: Clock,
-      stat: "Atender em 5 minutos",
-      result: "+60% conversão",
-      color: "text-primary"
-    },
-    {
-      icon: Users,
-      stat: "60% das vendas",
-      result: "vêm de leads antigos",
-      color: "text-primary"
-    },
-    {
-      icon: Target,
-      stat: "40% dos leads",
-      result: "NUNCA são atendidos (erro fatal)",
-      color: "text-destructive"
-    },
-    {
-      icon: Shield,
-      stat: "Confiança > Preço",
-      result: "Atendimento vende",
-      color: "text-primary"
-    },
-    {
-      icon: TrendingUp,
-      stat: "8-15 follow-ups",
-      result: "necessários (não desista!)",
-      color: "text-primary"
-    },
-    {
-      icon: Zap,
-      stat: "Regra dos 5 minutos",
-      result: "Muda o jogo completamente",
-      color: "text-primary"
-    }
+    { icon: Clock, stat: "5 minutos", result: "+60% conversão" },
+    { icon: Users, stat: "60% vendas", result: "leads antigos" },
+    { icon: Target, stat: "40% leads", result: "nunca atendidos" },
+    { icon: Shield, stat: "Confiança", result: "vende mais" },
+    { icon: TrendingUp, stat: "8-15 follow-ups", result: "necessários" },
+    { icon: Zap, stat: "Regra 5min", result: "muda o jogo" }
   ];
 
   const techniques = [
-    {
-      title: "Técnica das Duas Opções Positivas",
-      description: "Agendamento sem escapatória - o lead escolhe entre duas opções, mas sempre agenda"
-    },
-    {
-      title: "Método do Inimigo Comum",
-      description: "Quebra objeções sem confronto - você e o paciente contra o problema"
-    },
-    {
-      title: "Grupo de Pertencimento",
-      description: "Nunca tenha medo do preço - mostre que outros como ele já investiram"
-    },
-    {
-      title: "Múltiplos SIMs",
-      description: "Coleta micro-compromissos - pequenos 'sins' levam ao grande 'SIM'"
-    },
-    {
-      title: "Marcação de Território",
-      description: "WhatsApp + Instagram + Ligação - esteja presente em todos os canais"
-    }
+    { title: "Duas Opções Positivas", description: "Agendamento sem escapatória" },
+    { title: "Inimigo Comum", description: "Quebra objeções sem confronto" },
+    { title: "Grupo de Pertencimento", description: "Nunca tenha medo do preço" },
+    { title: "Múltiplos SIMs", description: "Micro-compromissos" },
+    { title: "Marcação de Território", description: "Presença em todos os canais" }
   ];
 
   const caseStudies = [
     {
-      title: "Clínica Alto Ticket",
+      title: "Alto Ticket",
       subtitle: "Facetas R$ 60k",
-      points: [
-        "Como vender 5 procedimentos/mês",
-        "Ciclo de venda consultivo",
-        "Autoridade acima de preço"
-      ]
+      points: ["5 procedimentos/mês", "Venda consultiva", "Autoridade > preço"]
     },
     {
-      title: "Clínica Volume",
+      title: "Volume",
       subtitle: "Múltiplas cadeiras",
-      points: [
-        "Conversão rápida em escala",
-        "Sistema de atendimento otimizado",
-        "Processo replicável"
-      ]
+      points: ["Conversão rápida", "Sistema otimizado", "Processo replicável"]
     },
     {
-      title: "Clínica Média",
-      subtitle: "Modelo híbrido",
-      points: [
-        "Equilíbrio volume + ticket",
-        "Flexibilidade estratégica",
-        "Crescimento sustentável"
-      ]
+      title: "Híbrido",
+      subtitle: "Equilíbrio ideal",
+      points: ["Volume + ticket", "Flexibilidade", "Crescimento sustentável"]
     }
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-background to-muted/20">
-      <div className="container mx-auto">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 leading-tight">
-            Os Números Não Mentem
-            <br />
-            <span className="text-primary">(E Você Pode Replicar)</span>
-          </h2>
+    <section className="py-20 px-6 bg-luxury-dark/30">
+      <div className="container mx-auto max-w-6xl">
+        <h2 className="text-4xl md:text-6xl font-black text-center mb-4 leading-tight">
+          Os Números Não Mentem
+          <span className="text-gradient block mt-2">(Você Pode Replicar)</span>
+        </h2>
 
-          <p className="text-xl text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-            Estatísticas validadas em centenas de clínicas que mudam completamente o jogo
-          </p>
+        <p className="text-center text-foreground/60 mb-16 max-w-2xl mx-auto">
+          Estatísticas validadas em centenas de clínicas
+        </p>
 
-          {/* Stats Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {stats.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-all"
-                  style={{
-                    animation: 'fadeIn 0.6s ease-out forwards',
-                    animationDelay: `${index * 0.1}s`,
-                    opacity: 0
-                  }}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Icon className={`w-6 h-6 ${item.color}`} />
-                    </div>
-                    <div>
-                      <div className="font-bold text-lg mb-1">{item.stat}</div>
-                      <div className="text-muted-foreground text-sm">{item.result}</div>
-                    </div>
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
+          {stats.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div key={index} className="glass-card p-4 rounded-xl border border-white/[0.08]">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Icon className="w-4 h-4 text-primary" />
                   </div>
+                  <div className="font-bold text-sm">{item.stat}</div>
                 </div>
-              );
-            })}
-          </div>
+                <div className="text-foreground/60 text-xs">{item.result}</div>
+              </div>
+            );
+          })}
+        </div>
 
-          {/* Techniques */}
-          <div className="mb-16">
-            <h3 className="text-3xl font-bold text-center mb-8">
-              💡 Técnicas <span className="text-primary">Validadas</span>
-            </h3>
-            <div className="grid md:grid-cols-2 gap-4">
+        {/* Techniques Slider */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-center mb-8">💡 Técnicas Validadas</h3>
+          <Carousel className="w-full max-w-4xl mx-auto">
+            <CarouselContent>
               {techniques.map((technique, index) => (
-                <div
-                  key={index}
-                  className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-all"
-                >
-                  <h4 className="font-bold text-lg mb-2 text-primary">✓ {technique.title}</h4>
-                  <p className="text-muted-foreground text-sm">{technique.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Case Studies */}
-          <div className="mb-12">
-            <h3 className="text-3xl font-bold text-center mb-8">
-              📊 Cases de <span className="text-primary">Sucesso</span>
-            </h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              {caseStudies.map((caseStudy, index) => (
-                <div
-                  key={index}
-                  className="bg-card border-2 border-primary/30 rounded-lg p-6 hover:shadow-lg transition-all"
-                >
-                  <div className="mb-4">
-                    <h4 className="text-xl font-bold mb-1">{caseStudy.title}</h4>
-                    <p className="text-sm text-primary font-semibold">{caseStudy.subtitle}</p>
+                <CarouselItem key={index} className="md:basis-1/2">
+                  <div className="glass-card p-6 rounded-xl border border-white/[0.08] h-full">
+                    <h4 className="font-bold mb-2 text-primary text-sm">✓ {technique.title}</h4>
+                    <p className="text-foreground/60 text-xs">{technique.description}</p>
                   </div>
-                  <ul className="space-y-2">
-                    {caseStudy.points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start gap-2">
-                        <span className="text-primary mt-1">→</span>
-                        <span className="text-sm text-muted-foreground">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                </CarouselItem>
               ))}
-            </div>
-          </div>
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
+        </div>
 
-          <div className="flex justify-center">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all hover:scale-105"
-            >
-              QUERO APLICAR ESSAS TÉCNICAS →
-            </Button>
+        {/* Case Studies */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold text-center mb-8">📊 Cases de Sucesso</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {caseStudies.map((caseStudy, index) => (
+              <div key={index} className="glass-card p-6 rounded-xl border border-primary/30">
+                <div className="mb-4">
+                  <h4 className="text-lg font-bold">{caseStudy.title}</h4>
+                  <p className="text-xs text-primary font-semibold">{caseStudy.subtitle}</p>
+                </div>
+                <ul className="space-y-2">
+                  {caseStudy.points.map((point, pointIndex) => (
+                    <li key={pointIndex} className="flex items-start gap-2">
+                      <span className="text-primary text-xs mt-0.5">→</span>
+                      <span className="text-xs text-foreground/70">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
+        </div>
+
+        <div className="text-center">
+          <Button size="lg" className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-bold text-base px-8 py-6 rounded-xl shadow-xl transition-all hover:scale-[1.02]">
+            QUERO APLICAR ESSAS TÉCNICAS →
+          </Button>
         </div>
       </div>
     </section>

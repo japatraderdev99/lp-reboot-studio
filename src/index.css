@@ -212,6 +212,11 @@ All colors MUST be HSL.
     border: 1px solid hsl(0 0% 100% / 0.08);
   }
 
+  .glass-card {
+    background: hsl(0 0% 100% / 0.02);
+    backdrop-filter: blur(20px);
+  }
+
   /* Gradient Text */
   .text-gradient {
     background: var(--gradient-orange);
