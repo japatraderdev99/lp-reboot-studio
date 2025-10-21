@@ -1,3 +1,5 @@
+import f5Logo from "@/assets/f5-logo.png";
+
 const Footer = () => {
   return (
     <footer className="relative bg-card border-t border-white/[0.08] py-16 px-6">
@@ -7,9 +9,12 @@ const Footer = () => {
       <div className="container mx-auto relative z-10">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-12">
-            <div className="relative w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/20">
-              <span className="text-4xl font-black text-white">F5</span>
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-2xl" />
+            <div className="relative w-20 h-20 flex items-center justify-center mx-auto mb-6">
+              <img 
+                src={f5Logo} 
+                alt="F5 Estratégia" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <h3 className="text-2xl font-bold mb-3">F5 Estratégia</h3>
             <p className="text-foreground/60 font-light">Aceleradora Digital para Odontologia</p>
