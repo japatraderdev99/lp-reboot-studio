@@ -1,11 +1,17 @@
 import { Button } from "@/components/ui/button";
+import modulo1 from "@/assets/modulo1.jpg";
+import modulo2 from "@/assets/modulo2.jpg";
+import modulo3 from "@/assets/modulo3.jpg";
+import modulo4 from "@/assets/modulo4.jpg";
+import modulo5 from "@/assets/modulo5.jpg";
+import modulo6 from "@/assets/modulo6.jpg";
 
 const methodologySteps = [
   {
     phase: "FASE 1",
     title: "FUNDAMENTOS",
     module: "Módulo 1",
-    thumbnail: "https://via.placeholder.com/280x500/1a1a1a/ff6b35?text=Thumb+M1",
+    thumbnail: modulo1,
     items: [
       "ICP Real vs ICP Imaginado",
       "Os 3 Jogos Empresariais",
@@ -16,7 +22,7 @@ const methodologySteps = [
     phase: "FASE 2",
     title: "CANAIS DE CONVERSÃO",
     module: "Módulo 2",
-    thumbnail: "https://via.placeholder.com/280x500/1a1a1a/ff6b35?text=Thumb+M2",
+    thumbnail: modulo2,
     items: [
       "Script Meta/Instagram",
       "Conversão Google em 5 min",
@@ -25,35 +31,46 @@ const methodologySteps = [
   },
   {
     phase: "FASE 3",
-    title: "RAPPORT & FOLLOW-UP",
-    module: "Módulos 3 e 4",
-    thumbnail: "https://via.placeholder.com/280x500/1a1a1a/ff6b35?text=Thumb+M3-4",
+    title: "ENGAJAMENTO & FOLLOW-UP",
+    module: "Módulo 3",
+    thumbnail: modulo3,
     items: [
-      "Regra dos 5 Minutos",
       "Fato Novo",
-      "BANT & SPIN Selling"
+      "BANT & SPIN Selling",
+      "13 Tipos de Conteúdo"
     ]
   },
   {
     phase: "FASE 4",
-    title: "FUNIL & NO-SHOW",
-    module: "Módulo 5",
-    thumbnail: "https://via.placeholder.com/280x500/1a1a1a/ff6b35?text=Thumb+M5",
+    title: "RAPPORT & CONEXÃO",
+    module: "Módulo 4",
+    thumbnail: modulo4,
     items: [
-      "6 Etapas do Funil",
+      "Regra dos 5 Minutos (+60% conversão)",
+      "Gerando Conexão Verdadeira",
+      "Técnicas de Autoridade"
+    ]
+  },
+  {
+    phase: "FASE 5",
+    title: "FUNIL & JORNADA DE COMPRA",
+    module: "Módulo 5",
+    thumbnail: modulo5,
+    items: [
+      "6 Etapas do Funil (MQL → Fechamento)",
       "Metáfora dos Reinos",
       "Técnicas Anti-No-Show"
     ]
   },
   {
-    phase: "FASE 5",
+    phase: "FASE 6",
     title: "FECHAMENTO INFALÍVEL",
     module: "Módulo 6",
-    thumbnail: "https://via.placeholder.com/280x500/1a1a1a/ff6b35?text=Thumb+M6",
+    thumbnail: modulo6,
     items: [
-      "Roteiro de Fechamento",
+      "Roteiro de Fechamento Completo",
       "Quebra de Objeções",
-      "Guardião das Vendas"
+      "Guardião das Vendas Saudáveis"
     ]
   }
 ];
@@ -68,7 +85,7 @@ const MethodologySection = () => {
             <span className="text-gradient block mt-2">Leads em Pacientes</span>
           </h2>
           <p className="text-foreground/60 max-w-3xl mx-auto">
-            5 fases estruturadas para você se tornar uma máquina de conversão
+            6 módulos estruturados para você se tornar uma máquina de conversão
           </p>
         </div>
 
@@ -79,16 +96,13 @@ const MethodologySection = () => {
               className="glass-card rounded-2xl border border-white/[0.08] overflow-hidden hover:border-primary/30 transition-all"
             >
               <div className="flex flex-col md:flex-row gap-6 p-6">
-                {/* Thumbnail Vertical - Placeholder para Kiwify */}
-                <div className="relative w-full md:w-40 h-64 md:h-auto flex-shrink-0 bg-luxury-dark/50 rounded-xl border border-white/[0.08] overflow-hidden">
+                {/* Thumbnail Vertical - Kiwify */}
+                <div className="relative w-full md:w-40 h-64 md:h-auto flex-shrink-0 rounded-xl overflow-hidden">
                   <img 
                     src={step.thumbnail} 
-                    alt={`${step.module} thumbnail`}
-                    className="w-full h-full object-cover opacity-30"
+                    alt={`${step.module} - ${step.title}`}
+                    className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center text-xs text-white/60 p-4 text-center">
-                    Insira aqui a thumb vertical da Kiwify
-                  </div>
                 </div>
 
                 {/* Content */}
