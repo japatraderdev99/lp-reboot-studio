@@ -136,6 +136,7 @@ const MethodologySection = () => {
           <Button 
             size="lg" 
             className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-bold text-base px-8 py-6 rounded-xl shadow-xl transition-all hover:scale-[1.02]"
+            onClick={() => window.open('https://pay.kiwify.com.br/mCqb3Yk', '_blank')}
           >
             QUERO DOMINAR ESSE MÉTODO →
           </Button>

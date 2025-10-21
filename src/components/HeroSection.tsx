@@ -50,19 +50,14 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* CTAs */}
-          <div className="max-w-3xl mx-auto mb-16 animate-fade-in flex flex-col sm:flex-row gap-5" style={{animationDelay: '0.5s'}}>
+          {/* CTA */}
+          <div className="max-w-2xl mx-auto mb-16 animate-fade-in" style={{animationDelay: '0.5s'}}>
             <Button 
               size="lg" 
-              className="flex-1 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-bold text-lg py-7 md:py-8 px-8 rounded-xl shadow-xl hover:shadow-orange transition-all duration-300 hover:scale-[1.02]"
+              className="w-full bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-bold text-lg py-7 md:py-8 px-8 rounded-xl shadow-xl hover:shadow-orange transition-all duration-300 hover:scale-[1.02]"
+              onClick={() => window.open('https://pay.kiwify.com.br/mCqb3Yk', '_blank')}
             >
-              Quero Converter Mais Leads →
-            </Button>
-            <Button 
-              size="lg"
-              className="flex-1 glass border-primary/50 text-primary hover:bg-primary hover:text-white font-bold text-lg py-7 md:py-8 px-8 rounded-xl transition-all duration-300 hover:scale-[1.02]"
-            >
-              Assistir Aula Gratuita
+              QUERO CONVERTER MAIS LEADS AGORA →
             </Button>
           </div>
 
