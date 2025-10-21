@@ -1,4 +1,11 @@
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import modulo1 from "@/assets/modulo1.jpg";
 import modulo2 from "@/assets/modulo2.jpg";
 import modulo3 from "@/assets/modulo3.jpg";
@@ -89,48 +96,55 @@ const MethodologySection = () => {
           </p>
         </div>
 
-        <div className="space-y-4 mb-16">
-          {methodologySteps.map((step, index) => (
-            <div
-              key={index}
-              className="card-glow rounded-2xl overflow-hidden"
-            >
-              <div className="flex flex-col md:flex-row gap-5 p-5">
-                {/* Thumbnail Vertical - Kiwify */}
-                <div className="relative w-full md:w-36 h-56 md:h-auto flex-shrink-0 rounded-lg overflow-hidden border border-white/[0.06]">
-                  <img 
-                    src={step.thumbnail} 
-                    alt={`${step.module} - ${step.title}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full mb-16"
+        >
+          <CarouselContent className="-ml-4">
+            {methodologySteps.map((step, index) => (
+              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                <div className="card-glow rounded-2xl overflow-hidden h-full">
+                  <div className="flex flex-col gap-5 p-5 h-full">
+                    {/* Thumbnail Vertical */}
+                    <div className="relative w-full h-48 flex-shrink-0 rounded-lg overflow-hidden border border-white/[0.06]">
+                      <img 
+                        src={step.thumbnail} 
+                        alt={`${step.module} - ${step.title}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
 
-                {/* Content */}
-                <div className="flex-1">
-                  <div className="flex items-center gap-2.5 mb-3">
-                    <span className="bg-primary/10 text-primary px-2.5 py-0.5 rounded-md font-bold text-xs border border-primary/20">
-                      {step.phase}
-                    </span>
-                    <div>
-                      <h3 className="text-lg md:text-xl font-bold text-primary">
+                    {/* Content */}
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2.5 mb-3">
+                        <span className="bg-primary/10 text-primary px-2.5 py-0.5 rounded-md font-bold text-xs border border-primary/20">
+                          {step.phase}
+                        </span>
+                      </div>
+                      <h3 className="text-lg md:text-xl font-bold text-primary mb-1">
                         {step.title}
                       </h3>
-                      <p className="text-xs text-foreground/50">{step.module}</p>
+                      <p className="text-xs text-foreground/50 mb-3">{step.module}</p>
+                      <ul className="space-y-1.5">
+                        {step.items.map((item, itemIndex) => (
+                          <li key={itemIndex} className="flex items-start gap-2 text-sm text-foreground/60">
+                            <span className="text-primary mt-0.5 text-xs">→</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
-                  <ul className="space-y-1.5">
-                    {step.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start gap-2 text-sm text-foreground/60">
-                        <span className="text-primary mt-0.5 text-xs">→</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex -left-12" />
+          <CarouselNext className="hidden md:flex -right-12" />
+        </Carousel>
 
         <div className="text-center">
           <Button 
