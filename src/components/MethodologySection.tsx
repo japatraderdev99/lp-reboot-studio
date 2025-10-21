@@ -109,11 +109,11 @@ const MethodologySection = () => {
                 <div className="card-glow rounded-2xl overflow-hidden h-full">
                   <div className="flex flex-col gap-5 p-5 h-full">
                     {/* Thumbnail Vertical */}
-                    <div className="relative w-full h-48 flex-shrink-0 rounded-lg overflow-hidden border border-white/[0.06]">
+                    <div className="relative w-full h-64 flex-shrink-0 rounded-lg overflow-hidden border border-white/[0.06]">
                       <img 
                         src={step.thumbnail} 
                         alt={`${step.module} - ${step.title}`}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                       />
                     </div>
 
