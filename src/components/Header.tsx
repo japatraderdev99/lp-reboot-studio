@@ -3,8 +3,9 @@ import f5Logo from "@/assets/f5-logo.png";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass-dark backdrop-blur-xl border-b border-white/[0.08]">
-      <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-white/[0.06]">
+      <div className="absolute inset-0 bg-background/80" />
+      <div className="container mx-auto px-6 h-20 flex items-center justify-between relative z-10">
         <div className="flex items-center gap-3">
           <div className="relative w-14 h-14 rounded-xl flex items-center justify-center">
             <img 
@@ -15,28 +16,28 @@ const Header = () => {
           </div>
         </div>
         
-        <nav className="hidden md:flex items-center gap-10">
-          <a href="#metodologia" className="text-sm font-medium text-foreground/80 hover:text-primary transition-all duration-300 relative group">
+        <nav className="hidden md:flex items-center gap-8">
+          <a href="#metodologia" className="text-xs font-medium text-foreground/70 hover:text-primary transition-all duration-300 relative group">
             A Metodologia
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+            <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
           </a>
-          <a href="#resultados" className="text-sm font-medium text-foreground/80 hover:text-primary transition-all duration-300 relative group">
+          <a href="#resultados" className="text-xs font-medium text-foreground/70 hover:text-primary transition-all duration-300 relative group">
             Resultados
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+            <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
           </a>
-          <a href="#diferenciais" className="text-sm font-medium text-foreground/80 hover:text-primary transition-all duration-300 relative group">
+          <a href="#diferenciais" className="text-xs font-medium text-foreground/70 hover:text-primary transition-all duration-300 relative group">
             Diferenciais
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+            <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
           </a>
-          <a href="#contato" className="text-sm font-medium text-foreground/80 hover:text-primary transition-all duration-300 relative group">
+          <a href="#contato" className="text-xs font-medium text-foreground/70 hover:text-primary transition-all duration-300 relative group">
             Contato
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+            <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
           </a>
         </nav>
 
         <Button 
           size="lg" 
-          className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-semibold px-8 shadow-lg hover:shadow-orange transition-all duration-300 hover:scale-[1.02]"
+          className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-semibold text-sm px-6 py-5 shadow-lg hover:shadow-orange transition-all duration-300 hover:scale-[1.02]"
         >
           QUERO COMEÇAR AGORA
         </Button>

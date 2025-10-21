@@ -4,24 +4,22 @@ import bannerCurso from "@/assets/banner-do-curso.jpg";
 const HeroSection = () => {
   return (
     <section className="min-h-screen pt-32 pb-20 px-6 relative overflow-hidden">
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-luxury-dark" />
-      
-      {/* Glow Effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] opacity-30" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] opacity-20" />
+      {/* Enhanced Glow Effects - inspired by viverdeia.ai */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/20 rounded-full blur-[150px] opacity-40" />
+      <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[120px] opacity-30" />
+      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] opacity-25" />
       
       <div className="container mx-auto relative z-10">
         <div className="max-w-6xl mx-auto">
-          {/* Badges */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8 animate-fade-in">
-            <span className="glass px-5 py-2.5 rounded-full text-sm font-semibold text-primary border border-primary/30 backdrop-blur-xl hover:scale-105 transition-transform duration-300">
+          {/* Badges - Minimalist style */}
+          <div className="flex flex-wrap justify-center gap-3 mb-10 animate-fade-in">
+            <span className="px-4 py-2 rounded-full text-xs font-medium text-foreground/80 bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl hover:border-primary/30 hover:text-primary transition-all duration-300">
               ⚡ 60% mais conversão em 5 minutos
             </span>
-            <span className="glass px-5 py-2.5 rounded-full text-sm font-semibold text-primary border border-primary/30 backdrop-blur-xl hover:scale-105 transition-transform duration-300">
+            <span className="px-4 py-2 rounded-full text-xs font-medium text-foreground/80 bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl hover:border-primary/30 hover:text-primary transition-all duration-300">
               📈 Usado por 500+ clínicas
             </span>
-            <span className="glass px-5 py-2.5 rounded-full text-sm font-semibold text-primary border border-primary/30 backdrop-blur-xl hover:scale-105 transition-transform duration-300">
+            <span className="px-4 py-2 rounded-full text-xs font-medium text-foreground/80 bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl hover:border-primary/30 hover:text-primary transition-all duration-300">
               💰 R$ 2M+ faturados
             </span>
           </div>
@@ -38,11 +36,11 @@ const HeroSection = () => {
             Método F5 validado em +500 clínicas: transforme leads frios em pacientes pagantes usando o sistema exato que fatura R$ 2M+/ano no mercado odontológico
           </p>
 
-          {/* Banner Container */}
+          {/* Banner Container - Minimalist sophisticated style */}
           <div className="relative max-w-5xl mx-auto mb-12 animate-scale-in" style={{animationDelay: '0.4s'}}>
-            <div className="relative aspect-video glass-dark rounded-2xl border border-white/[0.08] overflow-hidden shadow-2xl">
-              {/* Inner glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none z-10" />
+            <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/[0.06]">
+              {/* Subtle inner glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none z-10" />
               
               <img 
                 src={bannerCurso} 
@@ -68,8 +66,8 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          {/* Benefits Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto animate-fade-in" style={{animationDelay: '0.6s'}}>
+          {/* Benefits Grid - Minimalist cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto animate-fade-in" style={{animationDelay: '0.6s'}}>
             {[
               "Método validado em +500 clínicas",
               "Aumento de 60% na conversão comprovado",
@@ -78,10 +76,12 @@ const HeroSection = () => {
             ].map((benefit, index) => (
               <div 
                 key={index} 
-                className="group flex items-start gap-3 glass p-6 rounded-xl border border-white/[0.08] hover:border-primary/50 hover-luxury cursor-default"
+                className="group card-glow p-5 rounded-xl cursor-default"
               >
-                <span className="text-primary mt-0.5 text-xl font-bold group-hover:scale-110 transition-transform duration-300">✓</span>
-                <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors duration-300">{benefit}</span>
+                <div className="flex items-start gap-2.5">
+                  <span className="text-primary mt-0.5 text-base font-bold group-hover:scale-110 transition-transform duration-300">✓</span>
+                  <span className="text-sm font-normal text-foreground/70 group-hover:text-foreground/90 transition-colors duration-300">{benefit}</span>
+                </div>
               </div>
             ))}
           </div>

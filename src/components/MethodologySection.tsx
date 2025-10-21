@@ -89,15 +89,15 @@ const MethodologySection = () => {
           </p>
         </div>
 
-        <div className="space-y-6 mb-16">
+        <div className="space-y-4 mb-16">
           {methodologySteps.map((step, index) => (
             <div
               key={index}
-              className="glass-card rounded-2xl border border-white/[0.08] overflow-hidden hover:border-primary/30 transition-all"
+              className="card-glow rounded-2xl overflow-hidden"
             >
-              <div className="flex flex-col md:flex-row gap-6 p-6">
+              <div className="flex flex-col md:flex-row gap-5 p-5">
                 {/* Thumbnail Vertical - Kiwify */}
-                <div className="relative w-full md:w-40 h-64 md:h-auto flex-shrink-0 rounded-xl overflow-hidden">
+                <div className="relative w-full md:w-36 h-56 md:h-auto flex-shrink-0 rounded-lg overflow-hidden border border-white/[0.06]">
                   <img 
                     src={step.thumbnail} 
                     alt={`${step.module} - ${step.title}`}
@@ -107,21 +107,21 @@ const MethodologySection = () => {
 
                 {/* Content */}
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="bg-primary text-white px-3 py-1 rounded-lg font-bold text-xs">
+                  <div className="flex items-center gap-2.5 mb-3">
+                    <span className="bg-primary/10 text-primary px-2.5 py-0.5 rounded-md font-bold text-xs border border-primary/20">
                       {step.phase}
                     </span>
                     <div>
-                      <h3 className="text-xl md:text-2xl font-bold text-primary">
+                      <h3 className="text-lg md:text-xl font-bold text-primary">
                         {step.title}
                       </h3>
-                      <p className="text-xs text-foreground/60">{step.module}</p>
+                      <p className="text-xs text-foreground/50">{step.module}</p>
                     </div>
                   </div>
-                  <ul className="space-y-2">
+                  <ul className="space-y-1.5">
                     {step.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start gap-2 text-sm text-foreground/70">
-                        <span className="text-primary mt-0.5">→</span>
+                      <li key={itemIndex} className="flex items-start gap-2 text-sm text-foreground/60">
+                        <span className="text-primary mt-0.5 text-xs">→</span>
                         <span>{item}</span>
                       </li>
                     ))}

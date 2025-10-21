@@ -34,14 +34,14 @@ const CredibilitySection = () => {
           <span className="text-gradient block mt-2">RESULTADOS REAIS</span>
         </h2>
         
-        <div className="max-w-3xl mx-auto mb-16 glass-card p-8 rounded-2xl border border-white/[0.08]">
+        <div className="max-w-3xl mx-auto mb-16 card-glow p-8 rounded-2xl">
           <div className="flex items-start gap-6">
-            <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-2xl font-bold text-primary flex-shrink-0">
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-xl font-bold text-primary flex-shrink-0 border border-primary/20">
               FM
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-1">Fernando Machado</h3>
-              <p className="text-primary text-sm font-semibold mb-3">Diretor Comercial F5 Estratégia</p>
+              <h3 className="text-lg font-bold mb-1">Fernando Machado</h3>
+              <p className="text-primary text-xs font-semibold mb-3">Diretor Comercial F5 Estratégia</p>
               <div className="text-foreground/60 text-sm space-y-1">
                 <p>→ +15 anos no mercado odontológico</p>
                 <p>→ R$ 2M+ em vendas estruturadas</p>
@@ -49,37 +49,37 @@ const CredibilitySection = () => {
               </div>
             </div>
           </div>
-          <div className="mt-6 pt-6 border-t border-white/[0.08]">
-            <p className="text-center text-sm italic text-foreground/80">
+          <div className="mt-6 pt-6 border-t border-white/[0.06]">
+            <p className="text-center text-sm italic text-foreground/70">
               "Eu não te ensino a atender. Eu te ensino a <span className="text-primary font-semibold">VENDER</span>"
             </p>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-3 gap-4 mb-16">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="glass-card p-8 rounded-xl border border-white/[0.08] text-center"
+              className="card-glow p-6 rounded-xl text-center"
             >
-              <div className="text-4xl md:text-5xl font-black text-gradient mb-2">
+              <div className="text-3xl md:text-4xl font-black text-gradient mb-2">
                 {stat.value}
               </div>
-              <div className="text-foreground/60 text-sm">{stat.label}</div>
+              <div className="text-foreground/60 text-xs">{stat.label}</div>
             </div>
           ))}
         </div>
 
         {/* Testimonials Slider */}
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold text-center mb-8">Depoimentos</h3>
+          <h3 className="text-xl font-bold text-center mb-8">Depoimentos</h3>
           <Carousel className="w-full">
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="md:basis-1/2">
-                  <div className="glass-card p-6 rounded-xl border border-white/[0.08] h-full">
-                    <p className="text-foreground/70 mb-4 italic text-sm">"{testimonial.quote}"</p>
+                  <div className="card-glow p-5 rounded-xl h-full">
+                    <p className="text-foreground/60 mb-3 italic text-sm">"{testimonial.quote}"</p>
                     <p className="font-semibold text-xs text-primary">— {testimonial.author}</p>
                   </div>
                 </CarouselItem>

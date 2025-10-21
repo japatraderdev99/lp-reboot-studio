@@ -51,16 +51,16 @@ const ProofSection = () => {
         </p>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-16">
           {stats.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div key={index} className="glass-card p-4 rounded-xl border border-white/[0.08]">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Icon className="w-4 h-4 text-primary" />
+              <div key={index} className="card-glow p-4 rounded-xl">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <div className="w-7 h-7 bg-primary/10 rounded-lg flex items-center justify-center border border-primary/20">
+                    <Icon className="w-3.5 h-3.5 text-primary" />
                   </div>
-                  <div className="font-bold text-sm">{item.stat}</div>
+                  <div className="font-bold text-xs text-foreground/90">{item.stat}</div>
                 </div>
                 <div className="text-foreground/60 text-xs">{item.result}</div>
               </div>
@@ -70,13 +70,13 @@ const ProofSection = () => {
 
         {/* Techniques Slider */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8">💡 Técnicas Validadas</h3>
+          <h3 className="text-xl font-bold text-center mb-8">💡 Técnicas Validadas</h3>
           <Carousel className="w-full max-w-4xl mx-auto">
             <CarouselContent>
               {techniques.map((technique, index) => (
                 <CarouselItem key={index} className="md:basis-1/2">
-                  <div className="glass-card p-6 rounded-xl border border-white/[0.08] h-full">
-                    <h4 className="font-bold mb-2 text-primary text-sm">✓ {technique.title}</h4>
+                  <div className="card-glow p-5 rounded-xl h-full">
+                    <h4 className="font-bold mb-1.5 text-primary text-sm">✓ {technique.title}</h4>
                     <p className="text-foreground/60 text-xs">{technique.description}</p>
                   </div>
                 </CarouselItem>
@@ -89,19 +89,19 @@ const ProofSection = () => {
 
         {/* Case Studies */}
         <div className="mb-12">
-          <h3 className="text-2xl font-bold text-center mb-8">📊 Cases de Sucesso</h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <h3 className="text-xl font-bold text-center mb-8">📊 Cases de Sucesso</h3>
+          <div className="grid md:grid-cols-3 gap-4">
             {caseStudies.map((caseStudy, index) => (
-              <div key={index} className="glass-card p-6 rounded-xl border border-primary/30">
-                <div className="mb-4">
-                  <h4 className="text-lg font-bold">{caseStudy.title}</h4>
+              <div key={index} className="card-glow p-5 rounded-xl border border-primary/20">
+                <div className="mb-3">
+                  <h4 className="text-base font-bold">{caseStudy.title}</h4>
                   <p className="text-xs text-primary font-semibold">{caseStudy.subtitle}</p>
                 </div>
-                <ul className="space-y-2">
+                <ul className="space-y-1.5">
                   {caseStudy.points.map((point, pointIndex) => (
                     <li key={pointIndex} className="flex items-start gap-2">
                       <span className="text-primary text-xs mt-0.5">→</span>
-                      <span className="text-xs text-foreground/70">{point}</span>
+                      <span className="text-xs text-foreground/60">{point}</span>
                     </li>
                   ))}
                 </ul>

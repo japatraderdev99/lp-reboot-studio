@@ -47,12 +47,12 @@ const ProblemsSection = () => {
             return (
               <div
                 key={index}
-                className="glass-card p-6 rounded-xl border border-white/[0.08] hover:border-primary/30 transition-all duration-300"
+                className="card-glow p-5 rounded-xl"
               >
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Icon className="w-5 h-5 text-primary" />
+                <div className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center mb-3">
+                  <Icon className="w-4 h-4 text-primary" />
                 </div>
-                <p className="text-sm font-medium leading-relaxed">{problem.title}</p>
+                <p className="text-sm font-normal text-foreground/70 leading-relaxed">{problem.title}</p>
               </div>
             );
           })}
