@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Play, RotateCcw } from "lucide-react";
+import bannerCurso from "@/assets/banner-do-curso.jpg";
 
 const HeroSection = () => {
   return (
@@ -38,34 +38,17 @@ const HeroSection = () => {
             Método F5 validado em +500 clínicas: transforme leads frios em pacientes pagantes usando o sistema exato que fatura R$ 2M+/ano no mercado odontológico
           </p>
 
-          {/* Video Container */}
+          {/* Banner Container */}
           <div className="relative max-w-5xl mx-auto mb-12 animate-scale-in" style={{animationDelay: '0.4s'}}>
-            <div className="relative aspect-video glass-dark rounded-2xl border border-white/[0.08] flex flex-col items-center justify-center gap-8 p-10 overflow-hidden shadow-2xl">
+            <div className="relative aspect-video glass-dark rounded-2xl border border-white/[0.08] overflow-hidden shadow-2xl">
               {/* Inner glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none z-10" />
               
-              <div className="relative z-10 text-center space-y-6">
-                <h3 className="text-3xl md:text-4xl font-bold">
-                  Você já começou a assistir esse vídeo
-                </h3>
-                
-                <div className="flex flex-wrap gap-4 justify-center">
-                  <Button 
-                    size="lg" 
-                    className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white gap-3 px-8 py-6 text-base font-semibold shadow-lg hover:shadow-orange transition-all duration-300 hover:scale-[1.02]"
-                  >
-                    <Play className="w-5 h-5" />
-                    Continuar assistindo?
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    className="glass border-primary/50 text-primary hover:bg-primary hover:text-white gap-3 px-8 py-6 text-base font-semibold transition-all duration-300 hover:scale-[1.02]"
-                  >
-                    <RotateCcw className="w-5 h-5" />
-                    Assistir do início?
-                  </Button>
-                </div>
-              </div>
+              <img 
+                src={bannerCurso} 
+                alt="CRC Que Converte - Banner do Curso"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
