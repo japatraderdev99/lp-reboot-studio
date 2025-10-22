@@ -5,7 +5,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ProblemsSection from "@/components/ProblemsSection";
 import CredibilitySection from "@/components/CredibilitySection";
 import MethodologySection from "@/components/MethodologySection";
-import ProofSection from "@/components/ProofSection";
+import GuaranteeSection from "@/components/GuaranteeSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -18,7 +18,7 @@ const Index = () => {
       <ProblemsSection />
       <CredibilitySection />
       <MethodologySection />
-      <ProofSection />
+      <GuaranteeSection />
       <Footer />
     </div>
   );
