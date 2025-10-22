@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import LazyVideo from "@/components/LazyVideo";
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -46,8 +47,8 @@ const TestimonialsSection = () => {
                   className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3"
                 >
                   <div className="h-full flex items-center justify-center">
-                    <div 
-                      dangerouslySetInnerHTML={{ __html: testimonial.embedCode }}
+                    <LazyVideo 
+                      embedCode={testimonial.embedCode}
                       className="w-full max-w-[280px] sm:max-w-[320px] mx-auto"
                     />
                   </div>

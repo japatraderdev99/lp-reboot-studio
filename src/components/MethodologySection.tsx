@@ -114,6 +114,10 @@ const MethodologySection = () => {
                         src={step.thumbnail} 
                         alt={`${step.module} - ${step.title}`}
                         className="w-full h-full object-contain"
+                        loading="lazy"
+                        decoding="async"
+                        width="600"
+                        height="800"
                       />
                     </div>
 

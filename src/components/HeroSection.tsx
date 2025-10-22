@@ -32,6 +32,9 @@ const HeroSection = () => {
                 src={bannerCurso} 
                 alt="CRC Que Converte - Banner do Curso"
                 className="w-full h-full object-cover"
+                width="1920"
+                height="1080"
+                fetchPriority="high"
               />
             </div>
           </div>

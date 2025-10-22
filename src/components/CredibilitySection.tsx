@@ -58,6 +58,10 @@ const CredibilitySection = () => {
                 src={fernandoMachado} 
                 alt="Fernando Machado - Diretor Comercial f5 estratégia"
                 className="w-full h-auto object-cover"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="800"
               />
               
               {/* Floating Stats - Compact and sophisticated */}

@@ -105,6 +105,10 @@ const CasesSection = () => {
                       src={caseItem.image} 
                       alt={caseItem.title}
                       className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      width="800"
+                      height="400"
                     />
                     <div className="absolute top-3 left-3 md:top-4 md:left-4 bg-primary/90 backdrop-blur-sm px-2 py-1 md:px-3 md:py-1 rounded-full text-[10px] md:text-xs font-bold">
                       {caseItem.badge}
