@@ -47,12 +47,12 @@ const ProblemsSection = () => {
             return (
               <div
                 key={index}
-                className="card-glow p-5 rounded-xl"
+                className="card-glow p-6 rounded-xl flex flex-col items-center text-center group hover:scale-[1.02] transition-transform"
               >
-                <div className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center mb-3">
-                  <Icon className="w-4 h-4 text-primary" />
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                  <Icon className="w-5 h-5 text-primary" />
                 </div>
-                <p className="text-sm font-normal text-foreground/70 leading-relaxed">{problem.title}</p>
+                <p className="text-sm font-normal text-foreground/80 leading-relaxed">{problem.title}</p>
               </div>
             );
           })}

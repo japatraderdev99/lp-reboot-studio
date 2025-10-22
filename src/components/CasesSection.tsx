@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const CasesSection = () => {
   const mainCases = [
@@ -93,55 +94,67 @@ const CasesSection = () => {
           Veja os números reais de clínicas que escolheram resultados ao invés de discursos.
         </p>
 
-        {/* Main Cases */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12 px-2">
-          {mainCases.map((caseItem, index) => (
-            <div key={index} className="card-glow rounded-xl md:rounded-2xl overflow-hidden">
-              <div className="relative h-36 md:h-48 overflow-hidden">
-                <img 
-                  src={caseItem.image} 
-                  alt={caseItem.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute top-3 left-3 md:top-4 md:left-4 bg-primary/90 backdrop-blur-sm px-2 py-1 md:px-3 md:py-1 rounded-full text-[10px] md:text-xs font-bold">
-                  {caseItem.badge}
-                </div>
-              </div>
-              <div className="p-4 md:p-6">
-                <h3 className="text-base md:text-lg font-black mb-3 md:mb-4">{caseItem.title}</h3>
-                <div className="grid grid-cols-2 gap-2 md:gap-3 mb-3 md:mb-4">
-                  {caseItem.metrics.map((metric, idx) => (
-                    <div key={idx}>
-                      <div className="text-[10px] md:text-xs text-foreground/60 mb-1">{metric.label}</div>
-                      <div className="text-sm md:text-lg font-bold text-primary">{metric.value}</div>
+        {/* Main Cases - Carousel */}
+        <Carousel className="w-full mb-8 md:mb-12 px-2">
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {mainCases.map((caseItem, index) => (
+              <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                <div className="card-glow rounded-xl md:rounded-2xl overflow-hidden h-full">
+                  <div className="relative h-36 md:h-48 overflow-hidden">
+                    <img 
+                      src={caseItem.image} 
+                      alt={caseItem.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-3 left-3 md:top-4 md:left-4 bg-primary/90 backdrop-blur-sm px-2 py-1 md:px-3 md:py-1 rounded-full text-[10px] md:text-xs font-bold">
+                      {caseItem.badge}
                     </div>
-                  ))}
+                  </div>
+                  <div className="p-4 md:p-6">
+                    <h3 className="text-base md:text-lg font-black mb-3 md:mb-4">{caseItem.title}</h3>
+                    <div className="grid grid-cols-2 gap-2 md:gap-3 mb-3 md:mb-4">
+                      {caseItem.metrics.map((metric, idx) => (
+                        <div key={idx}>
+                          <div className="text-[10px] md:text-xs text-foreground/60 mb-1">{metric.label}</div>
+                          <div className="text-sm md:text-lg font-bold text-primary">{metric.value}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-xs md:text-sm text-foreground/70 mb-2">{caseItem.description}</p>
+                    {caseItem.extraInfo && (
+                      <p className="text-[10px] md:text-xs text-foreground/50">{caseItem.extraInfo}</p>
+                    )}
+                  </div>
                 </div>
-                <p className="text-xs md:text-sm text-foreground/70 mb-2">{caseItem.description}</p>
-                {caseItem.extraInfo && (
-                  <p className="text-[10px] md:text-xs text-foreground/50">{caseItem.extraInfo}</p>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex -left-12" />
+          <CarouselNext className="hidden md:flex -right-12" />
+        </Carousel>
 
-        {/* Other Cases Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-8 md:mb-12 px-2">
-          {otherCases.map((caseItem, index) => (
-            <div key={index} className="card-glow p-4 md:p-5 rounded-xl">
-              <h4 className="text-xs md:text-sm font-bold mb-2 md:mb-3">{caseItem.title}</h4>
-              <div className="mb-2 md:mb-3">
-                <div className="text-[10px] md:text-xs text-foreground/60 mb-1">{caseItem.metric.label}</div>
-                <div className="text-xl md:text-2xl font-black text-gradient">{caseItem.metric.value}</div>
-              </div>
-              <p className="text-xs text-foreground/60">{caseItem.description}</p>
-              {caseItem.period && (
-                <p className="text-[10px] md:text-xs text-foreground/50 mt-2">{caseItem.period}</p>
-              )}
-            </div>
-          ))}
-        </div>
+        {/* Other Cases - Carousel */}
+        <Carousel className="w-full mb-8 md:mb-12 px-2">
+          <CarouselContent className="-ml-2 md:-ml-3">
+            {otherCases.map((caseItem, index) => (
+              <CarouselItem key={index} className="pl-2 md:pl-3 basis-full sm:basis-1/2 lg:basis-1/4">
+                <div className="card-glow p-4 md:p-5 rounded-xl h-full">
+                  <h4 className="text-xs md:text-sm font-bold mb-2 md:mb-3">{caseItem.title}</h4>
+                  <div className="mb-2 md:mb-3">
+                    <div className="text-[10px] md:text-xs text-foreground/60 mb-1">{caseItem.metric.label}</div>
+                    <div className="text-xl md:text-2xl font-black text-gradient">{caseItem.metric.value}</div>
+                  </div>
+                  <p className="text-xs text-foreground/60">{caseItem.description}</p>
+                  {caseItem.period && (
+                    <p className="text-[10px] md:text-xs text-foreground/50 mt-2">{caseItem.period}</p>
+                  )}
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex -left-12" />
+          <CarouselNext className="hidden md:flex -right-12" />
+        </Carousel>
 
         {/* CTA */}
         <div className="text-center px-4">
