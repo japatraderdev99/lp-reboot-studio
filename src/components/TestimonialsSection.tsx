@@ -1,27 +1,44 @@
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useEffect } from "react";
 
 const TestimonialsSection = () => {
+  useEffect(() => {
+    // Load vturb SDK script
+    const script = document.createElement("script");
+    script.src = "https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js";
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   const testimonials = [
     {
-      videoId: "video1",
-      embedCode: `<div id="vid_67169ff7210d2e0009e76e73" style="position:relative;width:100%;padding: 177.77777777777777% 0 0;"><img id="thumb_67169ff7210d2e0009e76e73" src="https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/67169ff7210d2e0009e76e73/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_67169ff7210d2e0009e76e73" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_67169ff7210d2e0009e76e73">var s=document.createElement("script");s.src="https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/67169ff7210d2e0009e76e73/player.js",s.async=!0,document.head.appendChild(s);</script>`,
-      name: "Cliente 1"
+      id: "68f7e3478ea58bfe7173c5b5",
+      isVertical: true
     },
     {
-      videoId: "video2",
-      embedCode: `<div id="vid_67169ff7210d2e0009e76e74" style="position:relative;width:100%;padding: 177.77777777777777% 0 0;"><img id="thumb_67169ff7210d2e0009e76e74" src="https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/67169ff7210d2e0009e76e74/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_67169ff7210d2e0009e76e74" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_67169ff7210d2e0009e76e74">var s=document.createElement("script");s.src="https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/67169ff7210d2e0009e76e74/player.js",s.async=!0,document.head.appendChild(s);</script>`,
-      name: "Cliente 2"
+      id: "68f7dee38ea58bfe7173c072",
+      isVertical: true
     },
     {
-      videoId: "video3",
-      embedCode: `<div id="vid_67169ff7210d2e0009e76e75" style="position:relative;width:100%;padding: 177.77777777777777% 0 0;"><img id="thumb_67169ff7210d2e0009e76e75" src="https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/67169ff7210d2e0009e76e75/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_67169ff7210d2e0009e76e75" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_67169ff7210d2e0009e76e75">var s=document.createElement("script");s.src="https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/67169ff7210d2e0009e76e75/player.js",s.async=!0,document.head.appendChild(s);</script>`,
-      name: "Cliente 3"
+      id: "68f7d9cbc9a120c812a9e6a7",
+      isVertical: true
     },
     {
-      videoId: "video4",
-      embedCode: `<div id="vid_67169ff7210d2e0009e76e76" style="position:relative;width:100%;padding: 177.77777777777777% 0 0;"><img id="thumb_67169ff7210d2e0009e76e76" src="https://images.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/67169ff7210d2e0009e76e76/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_67169ff7210d2e0009e76e76" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_67169ff7210d2e0009e76e76">var s=document.createElement("script");s.src="https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/67169ff7210d2e0009e76e76/player.js",s.async=!0,document.head.appendChild(s);</script>`,
-      name: "Cliente 4"
+      id: "68f7d9ef21b0a6afaf4cc36c",
+      isVertical: true
+    },
+    {
+      id: "68f7df118ea58bfe7173c0b0",
+      isVertical: true
+    },
+    {
+      id: "68f7ebffa1ac75e611ca004b",
+      isVertical: false
     }
   ];
 
@@ -39,14 +56,48 @@ const TestimonialsSection = () => {
         {/* Video Testimonials Carousel */}
         <div className="max-w-6xl mx-auto mb-12">
           <Carousel className="w-full">
-            <CarouselContent>
+            <CarouselContent className="-ml-4">
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-2">
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="rounded-2xl overflow-hidden shadow-xl">
                     <div 
-                      className="rounded-2xl overflow-hidden card-glow"
-                      dangerouslySetInnerHTML={{ __html: testimonial.embedCode }}
-                    />
+                      id={`ifr_${testimonial.id}_wrapper`} 
+                      style={{ 
+                        margin: '0 auto', 
+                        width: '100%', 
+                        maxWidth: testimonial.isVertical ? '320px' : '100%'
+                      }}
+                    >
+                      <div 
+                        style={{ 
+                          position: 'relative', 
+                          padding: testimonial.isVertical ? '177.77777777777777% 0 0 0' : '56.25% 0 0 0'
+                        }} 
+                        id={`ifr_${testimonial.id}_aspect`}
+                      >
+                        <iframe 
+                          frameBorder="0" 
+                          allowFullScreen 
+                          src="about:blank" 
+                          id={`ifr_${testimonial.id}`} 
+                          style={{ 
+                            position: 'absolute', 
+                            top: 0, 
+                            left: 0, 
+                            width: '100%', 
+                            height: '100%',
+                            borderRadius: '1rem'
+                          }} 
+                          referrerPolicy="origin" 
+                          onLoad={(e) => {
+                            const iframe = e.target as HTMLIFrameElement;
+                            if (iframe.src === 'about:blank') {
+                              iframe.src = `https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/${testimonial.id}/v4/embed.html${location.search || '?'}&vl=${encodeURIComponent(location.href)}`;
+                            }
+                          }}
+                        />
+                      </div>
+                    </div>
                   </div>
                 </CarouselItem>
               ))}
