@@ -147,7 +147,7 @@ const CasesSection = () => {
         <div className="text-center px-4">
           <Button 
             size="lg" 
-            className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 h-auto w-full sm:w-auto"
+            className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 h-auto w-full sm:w-auto whitespace-normal sm:whitespace-nowrap leading-tight"
             onClick={() => window.open('https://pay.kiwify.com.br/mCqb3Yk', '_blank')}
           >
             QUERO RESULTADOS COMO ESTES

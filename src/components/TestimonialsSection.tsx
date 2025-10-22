@@ -24,25 +24,28 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-luxury-dark/30">
+    <section className="py-12 md:py-20 px-4 md:px-6 bg-luxury-dark/30">
       <div className="container mx-auto max-w-7xl">
-        <h2 className="text-4xl md:text-6xl font-black text-center mb-4 leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-3 md:mb-4 leading-tight px-2">
           Não é Sobre Nós.
           <span className="text-gradient block mt-2">É Sobre Quem Confia em Nós.</span>
         </h2>
-        <p className="text-center text-foreground/70 mb-16 max-w-3xl mx-auto text-lg">
+        <p className="text-center text-foreground/70 mb-12 md:mb-16 max-w-3xl mx-auto text-base md:text-lg px-4">
           Veja o que os donos de clínicas que já transformaram seus resultados têm a dizer
         </p>
 
         {/* Video Testimonials Carousel */}
-        <div className="max-w-6xl mx-auto mb-12">
+        <div className="max-w-6xl mx-auto mb-8 md:mb-12">
           <Carousel className="w-full">
-            <CarouselContent className="-ml-4">
+            <CarouselContent className="-ml-2 md:-ml-4">
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div 
-                    dangerouslySetInnerHTML={{ __html: testimonial.embedCode }}
-                  />
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3">
+                  <div className="h-full flex items-center justify-center">
+                    <div 
+                      dangerouslySetInnerHTML={{ __html: testimonial.embedCode }}
+                      className="w-full max-w-[280px] sm:max-w-[320px] mx-auto"
+                    />
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
@@ -52,10 +55,10 @@ const TestimonialsSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center">
+        <div className="text-center px-4">
           <Button 
             size="lg" 
-            className="text-lg px-8 py-6 h-auto"
+            className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 h-auto w-full sm:w-auto whitespace-normal sm:whitespace-nowrap"
             onClick={() => window.open('https://pay.kiwify.com.br/mCqb3Yk', '_blank')}
           >
             QUERO RESULTADOS COMO ESTES

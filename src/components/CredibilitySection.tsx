@@ -86,7 +86,7 @@ const CredibilitySection = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-12 md:mb-16 px-2">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 px-2">
           {stats.map((stat, index) => (
             <div
               key={index}
@@ -98,25 +98,6 @@ const CredibilitySection = () => {
               <div className="text-foreground/60 text-xs">{stat.label}</div>
             </div>
           ))}
-        </div>
-
-        {/* Testimonials Slider */}
-        <div className="max-w-4xl mx-auto px-2">
-          <h3 className="text-lg md:text-xl font-bold text-center mb-6 md:mb-8">Depoimentos</h3>
-          <Carousel className="w-full">
-            <CarouselContent>
-              {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="md:basis-1/2">
-                  <div className="card-glow p-4 md:p-5 rounded-xl h-full">
-                    <p className="text-foreground/60 mb-3 italic text-sm">"{testimonial.quote}"</p>
-                    <p className="font-semibold text-xs text-primary">— {testimonial.author}</p>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
         </div>
       </div>
     </section>

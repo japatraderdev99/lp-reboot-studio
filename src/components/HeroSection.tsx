@@ -38,13 +38,13 @@ const HeroSection = () => {
 
           {/* CTA */}
           <div className="max-w-2xl mx-auto mb-12 md:mb-16 animate-fade-in px-4" style={{animationDelay: '0.5s'}}>
-            <Button 
-              size="lg" 
-              className="w-full bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-bold text-base sm:text-lg md:text-xl py-6 md:py-7 lg:py-8 px-6 md:px-8 rounded-xl shadow-xl hover:shadow-orange transition-all duration-300 hover:scale-[1.02]"
-              onClick={() => window.open('https://pay.kiwify.com.br/mCqb3Yk', '_blank')}
-            >
-              QUERO CONVERTER MAIS LEADS AGORA →
-            </Button>
+          <Button 
+            size="lg" 
+            className="w-full bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-bold text-sm sm:text-base md:text-lg lg:text-xl py-5 sm:py-6 md:py-7 lg:py-8 px-6 md:px-8 rounded-xl shadow-xl hover:shadow-orange transition-all duration-300 hover:scale-[1.02] whitespace-normal leading-tight"
+            onClick={() => window.open('https://pay.kiwify.com.br/mCqb3Yk', '_blank')}
+          >
+            QUERO CONVERTER MAIS LEADS AGORA →
+          </Button>
           </div>
 
           {/* Benefits Grid - Responsive */}
