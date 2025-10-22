@@ -27,10 +27,6 @@ const Footer = () => {
                 contato@f5estrategia.com.br
               </a>
             </p>
-            <p className="flex items-center justify-center gap-2 text-sm">
-              <span>📱</span>
-              <span>WhatsApp: (XX) XXXXX-XXXX</span>
-            </p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 mb-12">

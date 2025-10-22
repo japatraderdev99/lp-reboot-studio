@@ -22,10 +22,6 @@ const TestimonialsSection = () => {
     {
       embedCode: `<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_68f7df118ea58bfe7173c0b0_wrapper" style="margin: 0 auto; width: 100%; max-width: 320px;"> <div style="position: relative; padding: 177.77777777777777% 0 0 0;" id="ifr_68f7df118ea58bfe7173c0b0_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_68f7df118ea58bfe7173c0b0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 1rem;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7df118ea58bfe7173c0b0/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>`,
       isVertical: true
-    },
-    {
-      embedCode: `<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_68f7ebffa1ac75e611ca004b_wrapper" style="margin: 0 auto; width: 100%; max-width: 420px;"> <div style="position: relative; padding: 56.25% 0 0 0;" id="ifr_68f7ebffa1ac75e611ca004b_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_68f7ebffa1ac75e611ca004b" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 1rem;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7ebffa1ac75e611ca004b/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>`,
-      isVertical: false
     }
   ];
 
@@ -47,19 +43,19 @@ const TestimonialsSection = () => {
               {testimonials.map((testimonial, index) => (
                 <CarouselItem 
                   key={index} 
-                  className={`pl-2 md:pl-4 ${testimonial.isVertical ? 'basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3' : 'basis-full sm:basis-2/3 md:basis-1/2'}`}
+                  className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3"
                 >
                   <div className="h-full flex items-center justify-center">
                     <div 
                       dangerouslySetInnerHTML={{ __html: testimonial.embedCode }}
-                      className={`w-full ${testimonial.isVertical ? 'max-w-[280px] sm:max-w-[320px]' : 'max-w-[360px] sm:max-w-[420px]'} mx-auto`}
+                      className="w-full max-w-[280px] sm:max-w-[320px] mx-auto"
                     />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
+            <CarouselPrevious className="left-0 md:-left-12" />
+            <CarouselNext className="right-0 md:-right-12" />
           </Carousel>
         </div>
 
@@ -67,7 +63,7 @@ const TestimonialsSection = () => {
         <div className="text-center px-4">
           <Button 
             size="lg" 
-            className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 h-auto w-full sm:w-auto whitespace-normal sm:whitespace-nowrap"
+            className="text-sm sm:text-base md:text-lg px-6 md:px-8 py-6 md:py-6 h-auto w-full sm:w-auto whitespace-normal leading-tight"
             onClick={() => window.open('https://pay.kiwify.com.br/mCqb3Yk', '_blank')}
           >
             QUERO RESULTADOS COMO ESTES
