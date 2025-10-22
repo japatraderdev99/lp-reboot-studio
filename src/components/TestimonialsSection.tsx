@@ -1,44 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { useEffect } from "react";
 
 const TestimonialsSection = () => {
-  useEffect(() => {
-    // Load vturb SDK script
-    const script = document.createElement("script");
-    script.src = "https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js";
-    script.async = true;
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
-
   const testimonials = [
     {
-      id: "68f7e3478ea58bfe7173c5b5",
-      isVertical: true
+      embedCode: `<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_68f7e3478ea58bfe7173c5b5_wrapper" style="margin: 0 auto; width: 100%; max-width: 320px;"> <div style="position: relative; padding: 177.77777777777777% 0 0 0;" id="ifr_68f7e3478ea58bfe7173c5b5_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_68f7e3478ea58bfe7173c5b5" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 1rem;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7e3478ea58bfe7173c5b5/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>`
     },
     {
-      id: "68f7dee38ea58bfe7173c072",
-      isVertical: true
+      embedCode: `<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_68f7dee38ea58bfe7173c072_wrapper" style="margin: 0 auto; width: 100%; max-width: 320px;"> <div style="position: relative; padding: 177.77777777777777% 0 0 0;" id="ifr_68f7dee38ea58bfe7173c072_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_68f7dee38ea58bfe7173c072" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 1rem;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7dee38ea58bfe7173c072/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>`
     },
     {
-      id: "68f7d9cbc9a120c812a9e6a7",
-      isVertical: true
+      embedCode: `<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_68f7d9cbc9a120c812a9e6a7_wrapper" style="margin: 0 auto; width: 100%; max-width: 320px;"> <div style="position: relative; padding: 177.77777777777777% 0 0 0;" id="ifr_68f7d9cbc9a120c812a9e6a7_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_68f7d9cbc9a120c812a9e6a7" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 1rem;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7d9cbc9a120c812a9e6a7/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>`
     },
     {
-      id: "68f7d9ef21b0a6afaf4cc36c",
-      isVertical: true
+      embedCode: `<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_68f7d9ef21b0a6afaf4cc36c_wrapper" style="margin: 0 auto; width: 100%; max-width: 320px;"> <div style="position: relative; padding: 177.77777777777777% 0 0 0;" id="ifr_68f7d9ef21b0a6afaf4cc36c_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_68f7d9ef21b0a6afaf4cc36c" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 1rem;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7d9ef21b0a6afaf4cc36c/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>`
     },
     {
-      id: "68f7df118ea58bfe7173c0b0",
-      isVertical: true
+      embedCode: `<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_68f7df118ea58bfe7173c0b0_wrapper" style="margin: 0 auto; width: 100%; max-width: 320px;"> <div style="position: relative; padding: 177.77777777777777% 0 0 0;" id="ifr_68f7df118ea58bfe7173c0b0_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_68f7df118ea58bfe7173c0b0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 1rem;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7df118ea58bfe7173c0b0/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>`
     },
     {
-      id: "68f7ebffa1ac75e611ca004b",
-      isVertical: false
+      embedCode: `<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_68f7ebffa1ac75e611ca004b_wrapper" style="margin: 0 auto; width: 100%;"> <div style="position: relative; padding: 56.25% 0 0 0;" id="ifr_68f7ebffa1ac75e611ca004b_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_68f7ebffa1ac75e611ca004b" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 1rem;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/68f7ebffa1ac75e611ca004b/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>`
     }
   ];
 
@@ -59,46 +40,9 @@ const TestimonialsSection = () => {
             <CarouselContent className="-ml-4">
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="rounded-2xl overflow-hidden shadow-xl">
-                    <div 
-                      id={`ifr_${testimonial.id}_wrapper`} 
-                      style={{ 
-                        margin: '0 auto', 
-                        width: '100%', 
-                        maxWidth: testimonial.isVertical ? '320px' : '100%'
-                      }}
-                    >
-                      <div 
-                        style={{ 
-                          position: 'relative', 
-                          padding: testimonial.isVertical ? '177.77777777777777% 0 0 0' : '56.25% 0 0 0'
-                        }} 
-                        id={`ifr_${testimonial.id}_aspect`}
-                      >
-                        <iframe 
-                          frameBorder="0" 
-                          allowFullScreen 
-                          src="about:blank" 
-                          id={`ifr_${testimonial.id}`} 
-                          style={{ 
-                            position: 'absolute', 
-                            top: 0, 
-                            left: 0, 
-                            width: '100%', 
-                            height: '100%',
-                            borderRadius: '1rem'
-                          }} 
-                          referrerPolicy="origin" 
-                          onLoad={(e) => {
-                            const iframe = e.target as HTMLIFrameElement;
-                            if (iframe.src === 'about:blank') {
-                              iframe.src = `https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/${testimonial.id}/v4/embed.html${location.search || '?'}&vl=${encodeURIComponent(location.href)}`;
-                            }
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </div>
+                  <div 
+                    dangerouslySetInnerHTML={{ __html: testimonial.embedCode }}
+                  />
                 </CarouselItem>
               ))}
             </CarouselContent>
