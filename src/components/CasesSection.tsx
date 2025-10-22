@@ -83,43 +83,43 @@ const CasesSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-background">
+    <section className="py-12 md:py-20 px-4 md:px-6 bg-background">
       <div className="container mx-auto max-w-7xl">
-        <h2 className="text-4xl md:text-6xl font-black text-center mb-4 leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-3 md:mb-4 leading-tight px-2">
           Você Quer Promessas ou
           <span className="text-gradient block mt-2">Quer Provas?</span>
         </h2>
-        <p className="text-center text-foreground/70 mb-16 max-w-3xl mx-auto">
+        <p className="text-center text-foreground/70 mb-12 md:mb-16 max-w-3xl mx-auto text-sm md:text-base px-4">
           Veja os números reais de clínicas que escolheram resultados ao invés de discursos.
         </p>
 
         {/* Main Cases */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12 px-2">
           {mainCases.map((caseItem, index) => (
-            <div key={index} className="card-glow rounded-2xl overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
+            <div key={index} className="card-glow rounded-xl md:rounded-2xl overflow-hidden">
+              <div className="relative h-36 md:h-48 overflow-hidden">
                 <img 
                   src={caseItem.image} 
                   alt={caseItem.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold">
+                <div className="absolute top-3 left-3 md:top-4 md:left-4 bg-primary/90 backdrop-blur-sm px-2 py-1 md:px-3 md:py-1 rounded-full text-[10px] md:text-xs font-bold">
                   {caseItem.badge}
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-lg font-black mb-4">{caseItem.title}</h3>
-                <div className="grid grid-cols-2 gap-3 mb-4">
+              <div className="p-4 md:p-6">
+                <h3 className="text-base md:text-lg font-black mb-3 md:mb-4">{caseItem.title}</h3>
+                <div className="grid grid-cols-2 gap-2 md:gap-3 mb-3 md:mb-4">
                   {caseItem.metrics.map((metric, idx) => (
                     <div key={idx}>
-                      <div className="text-xs text-foreground/60 mb-1">{metric.label}</div>
-                      <div className="text-lg font-bold text-primary">{metric.value}</div>
+                      <div className="text-[10px] md:text-xs text-foreground/60 mb-1">{metric.label}</div>
+                      <div className="text-sm md:text-lg font-bold text-primary">{metric.value}</div>
                     </div>
                   ))}
                 </div>
-                <p className="text-sm text-foreground/70 mb-2">{caseItem.description}</p>
+                <p className="text-xs md:text-sm text-foreground/70 mb-2">{caseItem.description}</p>
                 {caseItem.extraInfo && (
-                  <p className="text-xs text-foreground/50">{caseItem.extraInfo}</p>
+                  <p className="text-[10px] md:text-xs text-foreground/50">{caseItem.extraInfo}</p>
                 )}
               </div>
             </div>
@@ -127,27 +127,27 @@ const CasesSection = () => {
         </div>
 
         {/* Other Cases Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-8 md:mb-12 px-2">
           {otherCases.map((caseItem, index) => (
-            <div key={index} className="card-glow p-5 rounded-xl">
-              <h4 className="text-sm font-bold mb-3">{caseItem.title}</h4>
-              <div className="mb-3">
-                <div className="text-xs text-foreground/60 mb-1">{caseItem.metric.label}</div>
-                <div className="text-2xl font-black text-gradient">{caseItem.metric.value}</div>
+            <div key={index} className="card-glow p-4 md:p-5 rounded-xl">
+              <h4 className="text-xs md:text-sm font-bold mb-2 md:mb-3">{caseItem.title}</h4>
+              <div className="mb-2 md:mb-3">
+                <div className="text-[10px] md:text-xs text-foreground/60 mb-1">{caseItem.metric.label}</div>
+                <div className="text-xl md:text-2xl font-black text-gradient">{caseItem.metric.value}</div>
               </div>
               <p className="text-xs text-foreground/60">{caseItem.description}</p>
               {caseItem.period && (
-                <p className="text-xs text-foreground/50 mt-2">{caseItem.period}</p>
+                <p className="text-[10px] md:text-xs text-foreground/50 mt-2">{caseItem.period}</p>
               )}
             </div>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="text-center">
+        <div className="text-center px-4">
           <Button 
             size="lg" 
-            className="text-lg px-8 py-6 h-auto"
+            className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 h-auto w-full sm:w-auto"
             onClick={() => window.open('https://pay.kiwify.com.br/mCqb3Yk', '_blank')}
           >
             QUERO RESULTADOS COMO ESTES

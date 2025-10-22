@@ -9,15 +9,15 @@ const Footer = () => {
       <div className="container mx-auto relative z-10">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-12">
-            <div className="relative w-20 h-20 flex items-center justify-center mx-auto mb-6">
+            <div className="relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center mx-auto mb-6">
               <img 
                 src={f5Logo} 
-                alt="F5 Estratégia" 
+                alt="f5 estratégia" 
                 className="w-full h-full object-contain"
               />
             </div>
-            <h3 className="text-xl font-bold mb-2">F5 Estratégia</h3>
-            <p className="text-foreground/50 font-light text-sm">Aceleradora Digital para Odontologia</p>
+            <h3 className="text-lg md:text-xl font-bold mb-2">f5 estratégia</h3>
+            <p className="text-foreground/50 font-light text-xs md:text-sm">Aceleradora Digital para Odontologia</p>
           </div>
 
           <div className="space-y-2 mb-12 text-foreground/50">
@@ -49,8 +49,8 @@ const Footer = () => {
           </div>
 
           <div className="pt-8 border-t border-white/[0.06] text-xs text-foreground/40 space-y-1.5">
-            <p>© 2025 F5 Estratégia. Todos os direitos reservados.</p>
-            <p>CNPJ: XX.XXX.XXX/XXXX-XX</p>
+            <p>© 2025 f5 estratégia. Todos os direitos reservados.</p>
+            <p className="hidden sm:block">CNPJ: XX.XXX.XXX/XXXX-XX</p>
           </div>
         </div>
       </div>

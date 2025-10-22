@@ -5,12 +5,12 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-white/[0.06]">
       <div className="absolute inset-0 bg-background/80" />
-      <div className="container mx-auto px-6 h-20 flex items-center justify-between relative z-10">
-        <div className="flex items-center gap-3">
-          <div className="relative w-14 h-14 rounded-xl flex items-center justify-center">
+      <div className="container mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between relative z-10">
+        <div className="flex items-center gap-2 md:gap-3">
+          <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center">
             <img 
               src={f5Logo} 
-              alt="F5 Estratégia" 
+              alt="f5 estratégia" 
               className="w-full h-full object-contain"
             />
           </div>
