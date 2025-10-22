@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import viviaOdontoImage from "@/assets/vivia-odonto.webp";
 import oralUnicVilaImage from "@/assets/oral-unic-vila-mariana.webp";
+import oralUnicJoaoImage from "@/assets/oral-unic-joao-pessoa.webp";
 
 const CasesSection = () => {
   const mainCases = [
@@ -31,7 +32,7 @@ const CasesSection = () => {
     {
       title: "ORAL UNIC JOÃO PESSOA",
       badge: "🏆",
-      image: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=400&fit=crop",
+      image: oralUnicJoaoImage,
       metrics: [
         { label: "Vendas", value: "R$ 820 mil" },
         { label: "ROAS", value: "27x" }
