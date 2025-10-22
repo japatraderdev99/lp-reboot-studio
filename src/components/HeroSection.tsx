@@ -20,7 +20,7 @@ const HeroSection = () => {
 
           {/* Subheadline */}
           <p className="text-base sm:text-lg md:text-xl text-center text-foreground/70 mb-12 md:mb-16 max-w-4xl mx-auto animate-fade-in leading-relaxed font-light px-4" style={{animationDelay: '0.2s'}}>
-            Método f5 validado em 3000+ clínicas odontológicas: transforme leads frios em pacientes pagantes usando a metodologia que gera receita previsível e escalável no mercado odontológico
+            Método f5 validado em 3000+ clínicas odontológicas: transforme leads frios em pacientes recorrentes usando a metodologia que gera receita previsível e escalável no mercado odontológico
           </p>
 
           {/* Banner Container */}
