@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import viviaOdontoImage from "@/assets/vivia-odonto.webp";
 
 const CasesSection = () => {
   const mainCases = [
     {
       title: "VIVA ODONTOLOGIA",
-      badge: "🏆 Case Âncora",
-      image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=400&fit=crop",
+      badge: "🏆",
+      image: viviaOdontoImage,
       metrics: [
         { label: "Investimento", value: "R$ 124.294" },
         { label: "Faturamento", value: "R$ 3,8 MI" },
