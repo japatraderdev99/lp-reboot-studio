@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import viviaOdontoImage from "@/assets/vivia-odonto.webp";
+import oralUnicVilaImage from "@/assets/oral-unic-vila-mariana.webp";
 
 const CasesSection = () => {
   const mainCases = [
@@ -19,7 +20,7 @@ const CasesSection = () => {
     {
       title: "ORAL UNIC VILA MARIANA",
       badge: "🏆",
-      image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop",
+      image: oralUnicVilaImage,
       metrics: [
         { label: "Vendas", value: "R$ 2 MI+" },
         { label: "Período", value: "14 meses" }
