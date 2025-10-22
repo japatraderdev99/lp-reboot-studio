@@ -35,10 +35,10 @@ const CredibilitySection = () => {
           <span className="text-gradient block mt-2">Resultados Comprovados</span>
         </h2>
         
-        {/* Hero Style Section with Fernando */}
+        {/* Hero Style Section with Fernando - Floating Cards */}
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-16">
           {/* Left Column - Text Content */}
-          <div className="space-y-4 md:space-y-6 px-2">
+          <div className="space-y-4 md:space-y-6 px-2 order-2 lg:order-1">
             <div>
               <h3 className="text-sm md:text-lg font-bold mb-2 text-foreground/60">O ESPECIALISTA QUE</h3>
               <h4 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight mb-4">
@@ -52,50 +52,50 @@ const CredibilitySection = () => {
           </div>
 
           {/* Right Column - Image with Floating Stats */}
-          <div className="relative px-2">
-            <div className="relative rounded-2xl md:rounded-3xl overflow-hidden card-glow">
+          <div className="relative px-2 order-1 lg:order-2">
+            <div className="relative rounded-2xl md:rounded-3xl overflow-hidden">
               <img 
                 src={fernandoMachado} 
                 alt="Fernando Machado - Diretor Comercial f5 estratégia"
                 className="w-full h-auto object-cover"
               />
               
-              {/* Floating Stats - Responsive sizing */}
-              <div className="absolute top-4 left-4 md:top-8 md:left-8 glass-card px-3 py-2 md:px-5 md:py-3 rounded-xl md:rounded-2xl backdrop-blur-md border border-white/10">
-                <div className="text-xl md:text-3xl font-black text-gradient">+15 anos</div>
-                <div className="text-[10px] md:text-xs text-foreground/80">Mercado Odontológico</div>
+              {/* Floating Stats - Positioned to not cover face */}
+              <div className="absolute top-3 left-3 md:top-6 md:left-6 glass-card px-3 py-2 md:px-4 md:py-2.5 rounded-lg md:rounded-xl backdrop-blur-xl border border-white/10 shadow-xl">
+                <div className="text-lg sm:text-xl md:text-2xl font-black text-gradient">+15 anos</div>
+                <div className="text-[9px] sm:text-[10px] md:text-xs text-foreground/80 leading-tight">Mercado<br/>Odontológico</div>
               </div>
               
-              <div className="absolute top-1/3 right-4 md:right-8 glass-card px-3 py-2 md:px-5 md:py-3 rounded-xl md:rounded-2xl backdrop-blur-md border border-white/10">
-                <div className="text-xl md:text-3xl font-black text-gradient">R$ 2M+</div>
-                <div className="text-[10px] md:text-xs text-foreground/80">Vendas Estruturadas</div>
+              <div className="absolute top-1/4 right-3 md:right-6 glass-card px-3 py-2 md:px-4 md:py-2.5 rounded-lg md:rounded-xl backdrop-blur-xl border border-white/10 shadow-xl">
+                <div className="text-lg sm:text-xl md:text-2xl font-black text-gradient">R$ 2M+</div>
+                <div className="text-[9px] sm:text-[10px] md:text-xs text-foreground/80 leading-tight">Vendas<br/>Estruturadas</div>
               </div>
               
-              <div className="absolute bottom-8 left-6 md:bottom-12 md:left-12 glass-card px-3 py-2 md:px-5 md:py-3 rounded-xl md:rounded-2xl backdrop-blur-md border border-white/10">
-                <div className="text-xl md:text-3xl font-black text-gradient">500+</div>
-                <div className="text-[10px] md:text-xs text-foreground/80">CRCs Treinadas</div>
+              <div className="absolute bottom-20 sm:bottom-24 md:bottom-28 left-3 md:left-8 glass-card px-3 py-2 md:px-4 md:py-2.5 rounded-lg md:rounded-xl backdrop-blur-xl border border-white/10 shadow-xl">
+                <div className="text-lg sm:text-xl md:text-2xl font-black text-gradient">500+</div>
+                <div className="text-[9px] sm:text-[10px] md:text-xs text-foreground/80 leading-tight">CRCs<br/>Treinadas</div>
               </div>
 
-              {/* Name Label */}
-              <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 bg-background/90 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-lg md:rounded-xl border border-primary/20">
+              {/* Name Label - Bottom */}
+              <div className="absolute bottom-3 right-3 md:bottom-6 md:right-6 bg-background/95 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-lg md:rounded-xl border border-primary/20 shadow-xl">
                 <p className="font-bold text-xs md:text-sm">Fernando Machado</p>
-                <p className="text-[10px] md:text-xs text-primary">Diretor Comercial f5 estratégia</p>
+                <p className="text-[9px] md:text-xs text-primary leading-tight">Diretor Comercial<br/>f5 estratégia</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 px-2">
+        {/* Stats - Smaller and more sophisticated */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 px-2 max-w-4xl mx-auto">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="card-glow p-5 md:p-6 rounded-xl text-center"
+              className="card-glow p-4 md:p-5 rounded-xl text-center hover-scale group"
             >
-              <div className="text-2xl md:text-3xl lg:text-4xl font-black text-gradient mb-2">
+              <div className="text-xl sm:text-2xl md:text-3xl font-black text-gradient mb-1 group-hover:scale-110 transition-transform">
                 {stat.value}
               </div>
-              <div className="text-foreground/60 text-xs">{stat.label}</div>
+              <div className="text-foreground/50 text-[10px] sm:text-xs uppercase tracking-wider">{stat.label}</div>
             </div>
           ))}
         </div>
