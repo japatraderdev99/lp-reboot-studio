@@ -28,36 +28,60 @@ const CredibilitySection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-luxury-dark/30">
-      <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl md:text-6xl font-black text-center mb-4 leading-tight">
+    <section className="py-20 px-6 bg-luxury-dark/30 overflow-hidden">
+      <div className="container mx-auto max-w-7xl">
+        <h2 className="text-4xl md:text-6xl font-black text-center mb-16 leading-tight">
           Quem Está Por Trás dos
           <span className="text-gradient block mt-2">Resultados Comprovados</span>
         </h2>
         
-        <div className="max-w-3xl mx-auto mb-16 card-glow p-8 rounded-2xl">
-          <div className="flex items-start gap-6">
-            <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 border-2 border-primary/20">
-              <img 
-                src={fernandoMachado} 
-                alt="Fernando Machado"
-                className="w-full h-full object-cover"
-              />
-            </div>
+        {/* Hero Style Section with Fernando */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          {/* Left Column - Text Content */}
+          <div className="space-y-6">
             <div>
-              <h3 className="text-lg font-bold mb-1">Fernando Machado</h3>
-              <p className="text-primary text-xs font-semibold mb-3">Diretor Comercial F5 Estratégia</p>
-              <div className="text-foreground/60 text-sm space-y-1">
-                <p>→ +15 anos no mercado odontológico</p>
-                <p>→ R$ 2M+ em vendas estruturadas</p>
-                <p>→ 500+ CRCs treinadas</p>
-              </div>
+              <h3 className="text-lg font-bold mb-2 text-foreground/60">O ESPECIALISTA QUE</h3>
+              <h4 className="text-4xl md:text-5xl font-black leading-tight mb-4">
+                Transforma CRCs em
+                <span className="text-gradient block mt-2">Vendedoras de Alto Nível</span>
+              </h4>
+              <p className="text-foreground/70 text-lg">
+                Eu não te ensino a atender. Eu te ensino a <span className="text-primary font-semibold">VENDER</span>.
+              </p>
             </div>
           </div>
-          <div className="mt-6 pt-6 border-t border-white/[0.06]">
-            <p className="text-center text-sm italic text-foreground/70">
-              "Eu não te ensino a atender. Eu te ensino a <span className="text-primary font-semibold">VENDER</span>"
-            </p>
+
+          {/* Right Column - Image with Floating Stats */}
+          <div className="relative">
+            <div className="relative rounded-3xl overflow-hidden card-glow">
+              <img 
+                src={fernandoMachado} 
+                alt="Fernando Machado - Diretor Comercial F5 Estratégia"
+                className="w-full h-auto object-cover"
+              />
+              
+              {/* Floating Stats */}
+              <div className="absolute top-8 left-8 glass-card px-5 py-3 rounded-2xl backdrop-blur-md border border-white/10">
+                <div className="text-3xl font-black text-gradient">+15 anos</div>
+                <div className="text-xs text-foreground/80">Mercado Odontológico</div>
+              </div>
+              
+              <div className="absolute top-1/3 right-8 glass-card px-5 py-3 rounded-2xl backdrop-blur-md border border-white/10">
+                <div className="text-3xl font-black text-gradient">R$ 2M+</div>
+                <div className="text-xs text-foreground/80">Em Vendas Estruturadas</div>
+              </div>
+              
+              <div className="absolute bottom-12 left-12 glass-card px-5 py-3 rounded-2xl backdrop-blur-md border border-white/10">
+                <div className="text-3xl font-black text-gradient">500+</div>
+                <div className="text-xs text-foreground/80">CRCs Treinadas</div>
+              </div>
+
+              {/* Name Label */}
+              <div className="absolute bottom-8 right-8 bg-background/90 backdrop-blur-sm px-4 py-2 rounded-xl border border-primary/20">
+                <p className="font-bold text-sm">Fernando Machado</p>
+                <p className="text-xs text-primary">Diretor Comercial F5 Estratégia</p>
+              </div>
+            </div>
           </div>
         </div>
 
