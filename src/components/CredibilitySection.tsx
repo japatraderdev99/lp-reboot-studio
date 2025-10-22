@@ -1,4 +1,5 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import fernandoMachado from "@/assets/fernando-machado.png";
 
 const CredibilitySection = () => {
   const stats = [
@@ -30,14 +31,18 @@ const CredibilitySection = () => {
     <section className="py-20 px-6 bg-luxury-dark/30">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl md:text-6xl font-black text-center mb-4 leading-tight">
-          Quem Te Ensina é
-          <span className="text-gradient block mt-2">RESULTADOS REAIS</span>
+          Quem Está Por Trás dos
+          <span className="text-gradient block mt-2">Resultados Comprovados</span>
         </h2>
         
         <div className="max-w-3xl mx-auto mb-16 card-glow p-8 rounded-2xl">
           <div className="flex items-start gap-6">
-            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-xl font-bold text-primary flex-shrink-0 border border-primary/20">
-              FM
+            <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 border-2 border-primary/20">
+              <img 
+                src={fernandoMachado} 
+                alt="Fernando Machado"
+                className="w-full h-full object-cover"
+              />
             </div>
             <div>
               <h3 className="text-lg font-bold mb-1">Fernando Machado</h3>
