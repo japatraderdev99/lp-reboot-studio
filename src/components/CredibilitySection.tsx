@@ -60,26 +60,26 @@ const CredibilitySection = () => {
                 className="w-full h-auto object-cover"
               />
               
-              {/* Floating Stats - Positioned to not cover face */}
-              <div className="absolute top-3 left-3 md:top-6 md:left-6 glass-card px-3 py-2 md:px-4 md:py-2.5 rounded-lg md:rounded-xl backdrop-blur-xl border border-white/10 shadow-xl">
-                <div className="text-lg sm:text-xl md:text-2xl font-black text-gradient">+15 anos</div>
-                <div className="text-[9px] sm:text-[10px] md:text-xs text-foreground/80 leading-tight">Mercado<br/>Odontológico</div>
+              {/* Floating Stats - Compact and sophisticated */}
+              <div className="absolute top-2 left-2 md:top-4 md:left-4 glass-card px-2 py-1.5 md:px-3 md:py-2 rounded-lg backdrop-blur-xl border border-white/20 shadow-2xl hover:scale-105 transition-transform">
+                <div className="text-sm sm:text-base md:text-xl font-black text-gradient leading-none">+15 anos</div>
+                <div className="text-[8px] sm:text-[9px] md:text-[10px] text-foreground/70 leading-tight mt-0.5">Mercado<br/>Odontológico</div>
               </div>
               
-              <div className="absolute top-1/4 right-3 md:right-6 glass-card px-3 py-2 md:px-4 md:py-2.5 rounded-lg md:rounded-xl backdrop-blur-xl border border-white/10 shadow-xl">
-                <div className="text-lg sm:text-xl md:text-2xl font-black text-gradient">R$ 2M+</div>
-                <div className="text-[9px] sm:text-[10px] md:text-xs text-foreground/80 leading-tight">Vendas<br/>Estruturadas</div>
+              <div className="absolute top-1/4 right-2 md:right-4 glass-card px-2 py-1.5 md:px-3 md:py-2 rounded-lg backdrop-blur-xl border border-white/20 shadow-2xl hover:scale-105 transition-transform">
+                <div className="text-sm sm:text-base md:text-xl font-black text-gradient leading-none">R$ 2M+</div>
+                <div className="text-[8px] sm:text-[9px] md:text-[10px] text-foreground/70 leading-tight mt-0.5">Vendas<br/>Estruturadas</div>
               </div>
               
-              <div className="absolute bottom-20 sm:bottom-24 md:bottom-28 left-3 md:left-8 glass-card px-3 py-2 md:px-4 md:py-2.5 rounded-lg md:rounded-xl backdrop-blur-xl border border-white/10 shadow-xl">
-                <div className="text-lg sm:text-xl md:text-2xl font-black text-gradient">500+</div>
-                <div className="text-[9px] sm:text-[10px] md:text-xs text-foreground/80 leading-tight">CRCs<br/>Treinadas</div>
+              <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 left-2 md:left-4 glass-card px-2 py-1.5 md:px-3 md:py-2 rounded-lg backdrop-blur-xl border border-white/20 shadow-2xl hover:scale-105 transition-transform">
+                <div className="text-sm sm:text-base md:text-xl font-black text-gradient leading-none">500+</div>
+                <div className="text-[8px] sm:text-[9px] md:text-[10px] text-foreground/70 leading-tight mt-0.5">CRCs<br/>Treinadas</div>
               </div>
 
-              {/* Name Label - Bottom */}
-              <div className="absolute bottom-3 right-3 md:bottom-6 md:right-6 bg-background/95 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-lg md:rounded-xl border border-primary/20 shadow-xl">
-                <p className="font-bold text-xs md:text-sm">Fernando Machado</p>
-                <p className="text-[9px] md:text-xs text-primary leading-tight">Diretor Comercial<br/>f5 estratégia</p>
+              {/* Name Label - Bottom - More compact */}
+              <div className="absolute bottom-2 right-2 md:bottom-4 md:right-4 bg-background/95 backdrop-blur-sm px-2 py-1 md:px-3 md:py-1.5 rounded-lg border border-primary/30 shadow-2xl">
+                <p className="font-bold text-[10px] md:text-xs leading-tight">Fernando Machado</p>
+                <p className="text-[8px] md:text-[10px] text-primary leading-tight">Diretor Comercial<br/>f5 estratégia</p>
               </div>
             </div>
           </div>
