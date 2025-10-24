@@ -2,7 +2,7 @@ import f5Logo from "@/assets/f5-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-background/50 border-t border-white/[0.06] py-16 px-6">
+    <footer id="contato" className="relative bg-background/50 border-t border-white/[0.06] py-16 px-6">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-40" />
       

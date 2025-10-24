@@ -38,6 +38,7 @@ const Header = () => {
         <Button 
           size="lg" 
           className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-semibold text-sm px-6 py-5 shadow-lg hover:shadow-orange transition-all duration-300 hover:scale-[1.02]"
+          onClick={() => window.open('https://pay.kiwify.com.br/mCqb3Yk', '_blank')}
         >
           QUERO COMEÇAR AGORA
         </Button>

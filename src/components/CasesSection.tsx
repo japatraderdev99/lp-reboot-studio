@@ -87,7 +87,7 @@ const CasesSection = () => {
   ];
 
   return (
-    <section className="py-12 md:py-20 px-4 md:px-6 bg-background">
+    <section id="resultados" className="py-12 md:py-20 px-4 md:px-6 bg-background">
       <div className="container mx-auto max-w-7xl">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-3 md:mb-4 leading-tight px-2">
           Você Quer Promessas ou
