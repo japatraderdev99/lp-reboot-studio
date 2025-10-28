@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { getKiwifyUrlWithParams } from "@/lib/utm-tracker";
 import viviaOdontoImage from "@/assets/vivia-odonto.webp";
 import oralUnicVilaImage from "@/assets/oral-unic-vila-mariana.webp";
 import oralUnicJoaoImage from "@/assets/oral-unic-joao-pessoa.webp";
@@ -168,7 +169,10 @@ const CasesSection = () => {
           <Button 
             size="lg" 
             className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 h-auto w-full sm:w-auto whitespace-normal sm:whitespace-nowrap leading-tight"
-            onClick={() => window.open('https://pay.kiwify.com.br/mCqb3Yk', '_blank')}
+            onClick={() => {
+              const url = getKiwifyUrlWithParams("https://pay.kiwify.com.br/mCqb3Yk");
+              window.location.href = url;
+            }}
           >
             QUERO RESULTADOS COMO ESTES
           </Button>

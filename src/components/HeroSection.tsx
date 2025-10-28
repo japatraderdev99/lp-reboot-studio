@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { getKiwifyUrlWithParams } from "@/lib/utm-tracker";
 import bannerCurso from "@/assets/banner-do-curso.jpg";
 
 const HeroSection = () => {
@@ -44,7 +45,10 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             className="w-full bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-bold text-sm sm:text-base md:text-lg lg:text-xl py-5 sm:py-6 md:py-7 lg:py-8 px-6 md:px-8 rounded-xl shadow-xl hover:shadow-orange transition-all duration-300 hover:scale-[1.02] whitespace-normal leading-tight"
-            onClick={() => window.open('https://pay.kiwify.com.br/mCqb3Yk', '_blank')}
+            onClick={() => {
+              const url = getKiwifyUrlWithParams("https://pay.kiwify.com.br/mCqb3Yk");
+              window.location.href = url;
+            }}
           >
             QUERO CONVERTER MAIS LEADS AGORA →
           </Button>
