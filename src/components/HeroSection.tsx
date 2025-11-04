@@ -1,8 +1,22 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { getKiwifyUrlWithParams } from "@/lib/utm-tracker";
-import bannerCurso from "@/assets/banner-do-curso.jpg";
 
 const HeroSection = () => {
+  useEffect(() => {
+    // Load VTurb SmartPlayer script
+    const script = document.createElement("script");
+    script.src = "https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js";
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
   return (
     <section className="min-h-screen pt-24 md:pt-32 pb-12 md:pb-20 px-4 md:px-6 relative overflow-hidden">
       {/* Enhanced Glow Effects */}
@@ -24,19 +38,28 @@ const HeroSection = () => {
             Método f5 validado em 3000+ clínicas odontológicas: transforme leads frios em pacientes recorrentes usando a metodologia que gera receita previsível e escalável no mercado odontológico
           </p>
 
-          {/* Banner Container */}
+          {/* VSL Container */}
           <div className="relative max-w-5xl mx-auto mb-8 md:mb-12 animate-scale-in px-2" style={{animationDelay: '0.4s'}}>
-            <div className="relative aspect-video rounded-xl md:rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl">
+            <div className="relative rounded-xl md:rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none z-10" />
               
-              <img 
-                src={bannerCurso} 
-                alt="CRC Que Converte - Banner do Curso"
-                className="w-full h-full object-cover"
-                width="1920"
-                height="1080"
-                fetchPriority="high"
-              />
+              <div id="ifr_690a216c9db3d5e5c46acd7d_wrapper" style={{ margin: "0 auto", width: "100%" }}>
+                <div style={{ position: "relative", padding: "56.25% 0 0 0" }} id="ifr_690a216c9db3d5e5c46acd7d_aspect">
+                  <iframe 
+                    frameBorder="0" 
+                    allowFullScreen 
+                    src="about:blank" 
+                    id="ifr_690a216c9db3d5e5c46acd7d" 
+                    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} 
+                    referrerPolicy="origin" 
+                    onLoad={(e) => {
+                      const iframe = e.currentTarget;
+                      iframe.onload = null;
+                      iframe.src = 'https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/690a216c9db3d5e5c46acd7d/v4/embed.html' + (window.location.search || '?') + '&vl=' + encodeURIComponent(window.location.href);
+                    }}
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
