@@ -1,14 +1,26 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { getKiwifyUrlWithParams } from "@/lib/utm-tracker";
 
 const HeroSection = () => {
+  const videoContainerRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     // Load VTurb SmartPlayer script
     const script = document.createElement("script");
-    script.src = "https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js";
+    script.src = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/690a216c9db3d5e5c46acd7d/v4/player.js";
     script.async = true;
     document.head.appendChild(script);
+
+    // Create vturb-smartplayer element
+    if (videoContainerRef.current && !videoContainerRef.current.querySelector('vturb-smartplayer')) {
+      const player = document.createElement('vturb-smartplayer');
+      player.setAttribute('id', 'vid-690a216c9db3d5e5c46acd7d');
+      player.style.display = 'block';
+      player.style.margin = '0 auto';
+      player.style.width = '100%';
+      videoContainerRef.current.appendChild(player);
+    }
 
     return () => {
       // Cleanup script on unmount
@@ -43,23 +55,7 @@ const HeroSection = () => {
             <div className="relative rounded-xl md:rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none z-10" />
               
-              <div id="ifr_690a216c9db3d5e5c46acd7d_wrapper" style={{ margin: "0 auto", width: "100%" }}>
-                <div style={{ position: "relative", padding: "56.25% 0 0 0" }} id="ifr_690a216c9db3d5e5c46acd7d_aspect">
-                  <iframe 
-                    frameBorder="0" 
-                    allowFullScreen 
-                    src="about:blank" 
-                    id="ifr_690a216c9db3d5e5c46acd7d" 
-                    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} 
-                    referrerPolicy="origin" 
-                    onLoad={(e) => {
-                      const iframe = e.currentTarget;
-                      iframe.onload = null;
-                      iframe.src = 'https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/690a216c9db3d5e5c46acd7d/v4/embed.html' + (window.location.search || '?') + '&vl=' + encodeURIComponent(window.location.href);
-                    }}
-                  />
-                </div>
-              </div>
+              <div ref={videoContainerRef} className="relative z-20" />
             </div>
           </div>
 
