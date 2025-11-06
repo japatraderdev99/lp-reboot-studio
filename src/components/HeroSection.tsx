@@ -8,14 +8,14 @@ const HeroSection = () => {
   useEffect(() => {
     // Load VTurb SmartPlayer script
     const script = document.createElement("script");
-    script.src = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/690a216c9db3d5e5c46acd7d/v4/player.js";
+    script.src = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/ab-test/690c76b0e275067893450aee/player.js";
     script.async = true;
     document.head.appendChild(script);
 
     // Create vturb-smartplayer element
     if (videoContainerRef.current && !videoContainerRef.current.querySelector('vturb-smartplayer')) {
       const player = document.createElement('vturb-smartplayer');
-      player.setAttribute('id', 'vid-690a216c9db3d5e5c46acd7d');
+      player.setAttribute('id', 'ab-690c76b0e275067893450aee');
       player.style.display = 'block';
       player.style.margin = '0 auto';
       player.style.width = '100%';
