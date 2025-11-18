@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { getKiwifyUrlWithParams } from "@/lib/utm-tracker";
+import { getHotmartUrlWithParams } from "@/lib/utm-tracker";
 import { Shield, Clock, RefreshCw, CheckCircle2 } from "lucide-react";
 
 const GuaranteeSection = () => {
@@ -90,7 +90,7 @@ const GuaranteeSection = () => {
             size="lg" 
             className="w-full sm:w-auto text-base md:text-lg px-6 sm:px-8 md:px-12 py-5 sm:py-6 md:py-7 h-auto shadow-xl hover:shadow-2xl transition-all whitespace-normal sm:whitespace-nowrap leading-tight"
             onClick={() => {
-              const url = getKiwifyUrlWithParams("https://pay.kiwify.com.br/mCqb3Yk");
+              const url = getHotmartUrlWithParams("https://pay.hotmart.com/A102890720L");
               window.location.href = url;
             }}
           >

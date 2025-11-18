@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import f5Logo from "@/assets/f5-logo.png";
-import { getKiwifyUrlWithParams } from "@/lib/utm-tracker";
+import { getHotmartUrlWithParams } from "@/lib/utm-tracker";
 
 const Header = () => {
   return (
@@ -40,7 +40,7 @@ const Header = () => {
           size="lg" 
           className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-semibold text-sm px-6 py-5 shadow-lg hover:shadow-orange transition-all duration-300 hover:scale-[1.02]"
           onClick={() => {
-            const url = getKiwifyUrlWithParams("https://pay.kiwify.com.br/mCqb3Yk");
+            const url = getHotmartUrlWithParams("https://pay.hotmart.com/A102890720L");
             window.location.href = url;
           }}
         >

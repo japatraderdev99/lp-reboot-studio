@@ -1,5 +1,4 @@
-export function getKiwifyUrlWithParams(baseUrl: string): string {
-  const currentUrl = window.location.href;
+export function getHotmartUrlWithParams(baseUrl: string): string {
   const urlParams = new URLSearchParams(window.location.search);
   
   // Captura os parâmetros UTM
@@ -9,20 +8,20 @@ export function getKiwifyUrlWithParams(baseUrl: string): string {
   const utmTerm = urlParams.get("utm_term") || "";
   const utmContent = urlParams.get("utm_content") || "";
   
-  // Cria o parâmetro sck no formato da Kiwify
+  // Cria o parâmetro sck no formato da Hotmart
   const sckParam = `${utmSource}|${utmMedium}|${utmCampaign}|${utmTerm}|${utmContent}`;
   
   // Adiciona os parâmetros à URL base
   const separator = baseUrl.includes("?") ? "&" : "?";
   let finalUrl = baseUrl;
   
-  // Adiciona todos os parâmetros da URL atual
+  // Adiciona todos os parâmetros da URL atual se existirem
   if (urlParams.toString()) {
     finalUrl += separator + urlParams.toString();
   }
   
-  // Adiciona o parâmetro sck se houver UTMs
-  if (currentUrl.includes("?")) {
+  // Adiciona o parâmetro sck se houver parâmetros na URL
+  if (urlParams.toString()) {
     finalUrl += `&sck=${sckParam}`;
   }
   
