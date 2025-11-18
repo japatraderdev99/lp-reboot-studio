@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { getKiwifyUrlWithParams } from "@/lib/utm-tracker";
+import { getHotmartUrlWithParams } from "@/lib/utm-tracker";
 
 const HeroSection = () => {
   const videoContainerRef = useRef<HTMLDivElement>(null);
@@ -65,7 +65,7 @@ const HeroSection = () => {
             size="lg" 
             className="w-full bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-bold text-sm sm:text-base md:text-lg lg:text-xl py-5 sm:py-6 md:py-7 lg:py-8 px-6 md:px-8 rounded-xl shadow-xl hover:shadow-orange transition-all duration-300 hover:scale-[1.02] whitespace-normal leading-tight"
             onClick={() => {
-              const url = getKiwifyUrlWithParams("https://pay.kiwify.com.br/mCqb3Yk");
+              const url = getHotmartUrlWithParams("https://pay.hotmart.com/A102890720L");
               window.location.href = url;
             }}
           >

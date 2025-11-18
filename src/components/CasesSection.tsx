@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { getKiwifyUrlWithParams } from "@/lib/utm-tracker";
+import { getHotmartUrlWithParams } from "@/lib/utm-tracker";
 import viviaOdontoImage from "@/assets/vivia-odonto.webp";
 import oralUnicVilaImage from "@/assets/oral-unic-vila-mariana.webp";
 import oralUnicJoaoImage from "@/assets/oral-unic-joao-pessoa.webp";
@@ -170,7 +170,7 @@ const CasesSection = () => {
             size="lg" 
             className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 h-auto w-full sm:w-auto whitespace-normal sm:whitespace-nowrap leading-tight"
             onClick={() => {
-              const url = getKiwifyUrlWithParams("https://pay.kiwify.com.br/mCqb3Yk");
+              const url = getHotmartUrlWithParams("https://pay.hotmart.com/A102890720L");
               window.location.href = url;
             }}
           >
