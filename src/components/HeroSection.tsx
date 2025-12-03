@@ -62,7 +62,7 @@ const HeroSection = () => {
             <div className="relative rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl aspect-video">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none z-10" />
               
-              <div ref={videoContainerRef} className="w-full h-full" />
+              <div ref={videoContainerRef} className="absolute inset-0 w-full h-full z-20" />
             </div>
           </div>
 
