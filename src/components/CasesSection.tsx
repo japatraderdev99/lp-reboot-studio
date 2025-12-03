@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { getHotmartUrlWithParams } from "@/lib/utm-tracker";
-import viviaOdontoImage from "@/assets/vivia-odonto.webp";
+import viviaOdontoImage from "@/assets/viva-odonto.jpg";
 import oralUnicVilaImage from "@/assets/oral-unic-vila-mariana.webp";
-import oralUnicJoaoImage from "@/assets/oral-unic-joao-pessoa.webp";
+import oralUnicJoaoImage from "@/assets/oral-unic-joao-pessoa.jpg";
 
 const CasesSection = () => {
   const mainCases = [
