@@ -1,31 +1,28 @@
 import { useEffect } from "react";
 
-const BOT_ID = "4371a7d8-459d-497e-a763-550ec30985f1";
-
 const BotpressChatbot = () => {
   useEffect(() => {
     if (document.getElementById('botpress-webchat-inject')) return;
 
-    // Inject script
+    // Inject main script
     const injectScript = document.createElement('script');
     injectScript.id = 'botpress-webchat-inject';
-    injectScript.src = 'https://cdn.botpress.cloud/webchat/v2.2/inject.js';
+    injectScript.src = 'https://cdn.botpress.cloud/webchat/v3.3/inject.js';
+    injectScript.defer = true;
     document.head.appendChild(injectScript);
 
-    injectScript.onload = () => {
-      // Initialize with bot ID
-      if ((window as any).botpressWebChat) {
-        (window as any).botpressWebChat.init({
-          botId: BOT_ID,
-          hostUrl: 'https://cdn.botpress.cloud/webchat/v2.2',
-          messagingUrl: 'https://messaging.botpress.cloud',
-        });
-      }
-    };
+    // Inject config script
+    const configScript = document.createElement('script');
+    configScript.id = 'botpress-webchat-config';
+    configScript.src = 'https://files.bpcontent.cloud/2025/11/02/08/20251102080919-OZ6VRDMJ.js';
+    configScript.defer = true;
+    document.head.appendChild(configScript);
 
     return () => {
       const inject = document.getElementById('botpress-webchat-inject');
+      const config = document.getElementById('botpress-webchat-config');
       if (inject) inject.remove();
+      if (config) config.remove();
     };
   }, []);
 
