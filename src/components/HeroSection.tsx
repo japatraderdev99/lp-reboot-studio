@@ -48,14 +48,13 @@ const HeroSection = () => {
         <div className="max-w-6xl mx-auto">
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-center mb-6 md:mb-8 animate-slide-up leading-[1.15] tracking-tight px-2">
-            De Secretária a Máquina de Vendas:{" "}
-            <span className="text-gradient">Aumente em 60% a Conversão</span>
-            {" "}da Sua Clínica em 30 Dias
+            Transforme Sua Secretária em{" "}
+            <span className="text-gradient">Máquina de Vendas</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-base sm:text-lg md:text-xl text-center text-foreground/70 mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed font-light px-4">
-            Método f5 validado em 3000+ clínicas odontológicas: transforme leads frios em pacientes recorrentes usando a metodologia que gera receita previsível e escalável no mercado odontológico
+            Método validado em 3000+ clínicas para converter mais leads em pacientes
           </p>
 
           {/* VSL Container - Fixed aspect ratio to prevent CLS */}
