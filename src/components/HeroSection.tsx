@@ -25,9 +25,9 @@ const HeroSection = () => {
       <div className="container mx-auto relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Main Headline */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-center mb-6 sm:mb-8 md:mb-10 animate-slide-up leading-[1.1] tracking-tight">
+          <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-center mb-4 sm:mb-6 md:mb-8 animate-slide-up leading-[1.15] tracking-tight px-2">
             <span className="text-gradient drop-shadow-lg">Assista o Vídeo Abaixo</span>{" "}
-            <span className="block mt-2">Para Descobrir Como Transformar Sua Secretária em Uma</span>{" "}
+            <span className="block mt-1 sm:mt-2">Para Descobrir Como Transformar Sua Secretária em Uma</span>{" "}
             <span className="text-gradient drop-shadow-lg">Máquina de Vendas</span>
           </h1>
 
