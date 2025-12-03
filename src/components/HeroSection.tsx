@@ -25,15 +25,11 @@ const HeroSection = () => {
       <div className="container mx-auto relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Main Headline */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-center mb-4 sm:mb-6 md:mb-8 animate-slide-up leading-[1.15] tracking-tight">
-            Transforme Sua Secretária em{" "}
-            <span className="text-gradient">Máquina de Vendas</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-center mb-6 sm:mb-8 md:mb-10 animate-slide-up leading-[1.1] tracking-tight">
+            <span className="text-gradient drop-shadow-lg">Assista o Vídeo Abaixo</span>{" "}
+            <span className="block mt-2">Para Descobrir Como Transformar Sua Secretária em Uma</span>{" "}
+            <span className="text-gradient drop-shadow-lg">Máquina de Vendas</span>
           </h1>
-
-          {/* Subheadline */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center text-foreground/80 mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-normal px-2">
-            Método validado em 3000+ clínicas para converter mais leads em pacientes
-          </p>
 
           {/* VSL Container - VTurb Smartplayer */}
           <div className="relative w-full max-w-5xl mx-auto mb-6 sm:mb-8 md:mb-12">
