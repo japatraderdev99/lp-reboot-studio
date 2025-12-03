@@ -16,6 +16,67 @@
     <link rel="dns-prefetch" href="https://images.converteai.net">
     <link rel="dns-prefetch" href="https://api.vturb.com.br">
     
+    <!-- Critical CSS for above-the-fold content - improves FCP -->
+    <style>
+      *,*::before,*::after{box-sizing:border-box;border-width:0;border-style:solid}
+      html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+      body{margin:0;line-height:inherit;background:linear-gradient(180deg,hsl(0 0% 3%) 0%,hsl(0 0% 5%) 100%);color:#fff;-webkit-font-smoothing:antialiased}
+      body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at 50% 100%,hsl(16 100% 10%/.25) 0%,transparent 50%);z-index:0;pointer-events:none}
+      #root{position:relative;z-index:1}
+      h1,h2,h3{margin:0;font-weight:700;letter-spacing:-0.02em}
+      h1{font-size:clamp(2rem,5vw,4rem);line-height:1.1}
+      p{margin:0}
+      button{font-family:inherit;cursor:pointer}
+      img{max-width:100%;height:auto}
+      
+      /* Header critical */
+      header{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+      header>div:first-child{position:absolute;inset:0;background:rgba(8,8,8,.8)}
+      
+      /* Hero critical */
+      .min-h-screen{min-height:100vh}
+      .pt-24{padding-top:6rem}
+      .pb-12{padding-bottom:3rem}
+      .px-4{padding-left:1rem;padding-right:1rem}
+      .relative{position:relative}
+      .overflow-hidden{overflow:hidden}
+      .container{width:100%;margin-left:auto;margin-right:auto;max-width:80rem}
+      .mx-auto{margin-left:auto;margin-right:auto}
+      .max-w-6xl{max-width:72rem}
+      .max-w-5xl{max-width:64rem}
+      .text-center{text-align:center}
+      .mb-6{margin-bottom:1.5rem}
+      .mb-8{margin-bottom:2rem}
+      .mb-12{margin-bottom:3rem}
+      .font-black{font-weight:900}
+      .leading-tight{line-height:1.15}
+      
+      /* Text gradient */
+      .text-gradient{background:linear-gradient(135deg,hsl(16 100% 60%) 0%,hsl(16 89% 54%) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+      
+      /* Video container placeholder */
+      .aspect-video{aspect-ratio:16/9}
+      .rounded-xl{border-radius:.75rem}
+      .border{border-width:1px;border-color:rgba(255,255,255,.06)}
+      .shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
+      
+      /* Button critical */
+      .bg-primary{background:linear-gradient(135deg,hsl(16 100% 60%) 0%,hsl(16 89% 54%) 100%)}
+      .text-white{color:#fff}
+      .font-bold{font-weight:700}
+      .rounded-xl{border-radius:.75rem}
+      .w-full{width:100%}
+      .py-6{padding-top:1.5rem;padding-bottom:1.5rem}
+      .px-8{padding-left:2rem;padding-right:2rem}
+      
+      /* Flex/Grid utilities */
+      .flex{display:flex}
+      .items-center{align-items:center}
+      .justify-between{justify-content:space-between}
+      .gap-3{gap:.75rem}
+      .grid{display:grid}
+    </style>
+    
     <!-- Preload critical font CSS and file -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
