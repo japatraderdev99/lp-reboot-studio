@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { TrendingDown, DollarSign, Users, BarChart3, Target, UserX } from "lucide-react";
+import { getHotmartUrlWithParams } from "@/lib/utm-tracker";
 
 const problems = [
   {
@@ -62,7 +63,10 @@ const ProblemsSection = () => {
           <Button 
             size="lg" 
             className="w-full sm:w-auto bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-bold text-sm md:text-base px-6 md:px-8 py-5 md:py-6 rounded-xl shadow-xl transition-all hover:scale-[1.02]"
-            onClick={() => window.open('https://pay.kiwify.com.br/mCqb3Yk', '_blank')}
+            onClick={() => {
+              const url = getHotmartUrlWithParams("https://pay.hotmart.com/A102890720L");
+              window.location.href = url;
+            }}
           >
             RESOLVER ESSES PROBLEMAS
           </Button>

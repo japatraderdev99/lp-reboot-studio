@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import LazyVideo from "@/components/LazyVideo";
+import { getHotmartUrlWithParams } from "@/lib/utm-tracker";
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -65,7 +66,10 @@ const TestimonialsSection = () => {
           <Button 
             size="lg" 
             className="text-sm sm:text-base md:text-lg px-6 md:px-8 py-6 md:py-6 h-auto w-full sm:w-auto whitespace-normal leading-tight"
-            onClick={() => window.open('https://pay.kiwify.com.br/mCqb3Yk', '_blank')}
+            onClick={() => {
+              const url = getHotmartUrlWithParams("https://pay.hotmart.com/A102890720L");
+              window.location.href = url;
+            }}
           >
             QUERO RESULTADOS COMO ESTES
           </Button>
