@@ -1,21 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { getHotmartUrlWithParams } from "@/lib/utm-tracker";
 
 const HeroSection = () => {
-  useEffect(() => {
-    // Load VTurb SDK script
-    const script = document.createElement("script");
-    script.src = "https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js";
-    script.async = true;
-    document.head.appendChild(script);
+  const [iframeSrc, setIframeSrc] = useState<string>("");
 
-    return () => {
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
-    };
+  useEffect(() => {
+    // Set iframe URL after mount to avoid SSR issues
+    const search = window.location.search || '?';
+    const vl = encodeURIComponent(window.location.href);
+    setIframeSrc(`https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/6930a75d30e3e1f31709f2d5/v4/embed.html${search}&vl=${vl}`);
   }, []);
+
   return (
     <section className="min-h-screen pt-20 sm:pt-24 md:pt-32 pb-12 md:pb-20 px-3 sm:px-4 md:px-6 relative overflow-hidden">
       {/* Simplified Glow Effects - Single element for performance */}
@@ -45,14 +41,17 @@ const HeroSection = () => {
                 className="relative"
                 style={{ paddingTop: '56.25%' }}
               >
-                <iframe
-                  id="ifr_6930a75d30e3e1f31709f2d5"
-                  frameBorder={0}
-                  allowFullScreen
-                  src={`https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/6930a75d30e3e1f31709f2d5/v4/embed.html${window.location.search || '?'}&vl=${encodeURIComponent(window.location.href)}`}
-                  className="absolute top-0 left-0 w-full h-full"
-                  referrerPolicy="origin"
-                />
+                {iframeSrc && (
+                  <iframe
+                    id="ifr_6930a75d30e3e1f31709f2d5"
+                    frameBorder={0}
+                    allowFullScreen
+                    src={iframeSrc}
+                    className="absolute top-0 left-0 w-full h-full"
+                    referrerPolicy="origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  />
+                )}
               </div>
             </div>
           </div>
