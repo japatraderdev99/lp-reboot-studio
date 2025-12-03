@@ -21,15 +21,20 @@ const LoadingFallback = ({ height = "400px" }: { height?: string }) => (
 const Index = () => {
   const [showBelowFold, setShowBelowFold] = useState(false);
 
-  // Defer below-fold content loading to reduce TBT
+  // Defer below-fold content loading - with safe browser check
   useEffect(() => {
-    const timer = requestIdleCallback ? 
-      requestIdleCallback(() => setShowBelowFold(true), { timeout: 1500 }) :
-      setTimeout(() => setShowBelowFold(true), 800);
+    const hasIdleCallback = typeof window !== 'undefined' && 'requestIdleCallback' in window;
+    
+    const timer = hasIdleCallback
+      ? window.requestIdleCallback(() => setShowBelowFold(true), { timeout: 1500 })
+      : window.setTimeout(() => setShowBelowFold(true), 800);
     
     return () => {
-      if (requestIdleCallback) cancelIdleCallback(timer as number);
-      else clearTimeout(timer as unknown as number);
+      if (hasIdleCallback) {
+        window.cancelIdleCallback(timer as number);
+      } else {
+        window.clearTimeout(timer as unknown as number);
+      }
     };
   }, []);
 
