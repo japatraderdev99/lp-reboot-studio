@@ -59,13 +59,10 @@ const HeroSection = () => {
 
           {/* VSL Container - Fixed aspect ratio to prevent CLS */}
           <div className="relative w-full max-w-5xl mx-auto mb-6 sm:mb-8 md:mb-12">
-            <div 
-              className="relative rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl"
-              style={{ paddingBottom: '56.25%', position: 'relative', height: 0 }}
-            >
+            <div className="relative rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl aspect-video">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none z-10" />
               
-              <div ref={videoContainerRef} className="absolute inset-0 z-20 w-full h-full" />
+              <div ref={videoContainerRef} className="w-full h-full" />
             </div>
           </div>
 
