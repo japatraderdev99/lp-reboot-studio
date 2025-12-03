@@ -111,8 +111,10 @@ const CasesSection = () => {
                       className="w-full h-full object-cover"
                       loading="lazy"
                       decoding="async"
+                      fetchPriority="low"
                       width="400"
                       height="200"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     <div className="absolute top-3 left-3 md:top-4 md:left-4 bg-primary/90 backdrop-blur-sm px-2 py-1 md:px-3 md:py-1 rounded-full text-[10px] md:text-xs font-bold">
                       {caseItem.badge}
