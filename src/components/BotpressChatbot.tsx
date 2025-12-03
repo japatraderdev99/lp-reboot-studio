@@ -1,32 +1,31 @@
 import { useEffect } from "react";
 
+const BOT_ID = "4371a7d8-459d-497e-a763-550ec30985f1";
+
 const BotpressChatbot = () => {
   useEffect(() => {
-    // Check if script already exists
-    if (document.getElementById('botpress-webchat-script')) return;
+    if (document.getElementById('botpress-webchat-inject')) return;
 
-    const script = document.createElement('script');
-    script.id = 'botpress-webchat-script';
-    script.src = 'https://cdn.botpress.cloud/webchat/v3.3/inject.js';
-    script.async = true;
-    
-    script.onload = () => {
-      // Initialize webchat after script loads
-      if (window.botpress) {
-        window.botpress.init({
-          configUrl: 'https://files.bpcontent.cloud/2025/11/02/08/20251102080919-FP37SPLO.json'
+    // Inject script
+    const injectScript = document.createElement('script');
+    injectScript.id = 'botpress-webchat-inject';
+    injectScript.src = 'https://cdn.botpress.cloud/webchat/v2.2/inject.js';
+    document.head.appendChild(injectScript);
+
+    injectScript.onload = () => {
+      // Initialize with bot ID
+      if ((window as any).botpressWebChat) {
+        (window as any).botpressWebChat.init({
+          botId: BOT_ID,
+          hostUrl: 'https://cdn.botpress.cloud/webchat/v2.2',
+          messagingUrl: 'https://messaging.botpress.cloud',
         });
       }
     };
 
-    document.body.appendChild(script);
-
     return () => {
-      // Cleanup on unmount
-      const existingScript = document.getElementById('botpress-webchat-script');
-      if (existingScript) {
-        existingScript.remove();
-      }
+      const inject = document.getElementById('botpress-webchat-inject');
+      if (inject) inject.remove();
     };
   }, []);
 
