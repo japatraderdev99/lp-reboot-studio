@@ -31,10 +31,10 @@ const HeroSection = () => {
   }, []);
   return (
     <section className="min-h-screen pt-24 md:pt-32 pb-12 md:pb-20 px-4 md:px-6 relative overflow-hidden">
-      {/* Enhanced Glow Effects */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] md:w-[1000px] h-[400px] md:h-[600px] bg-primary/20 rounded-full blur-[120px] md:blur-[150px] opacity-40" />
-      <div className="absolute top-1/3 left-1/4 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-primary/15 rounded-full blur-[100px] md:blur-[120px] opacity-30" />
-      <div className="absolute bottom-1/4 right-1/4 w-[350px] md:w-[500px] h-[350px] md:h-[500px] bg-primary/10 rounded-full blur-[80px] md:blur-[100px] opacity-25" />
+      {/* Enhanced Glow Effects - Fixed dimensions to prevent CLS */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/20 rounded-full blur-[120px] opacity-40 pointer-events-none" aria-hidden="true" />
+      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-primary/15 rounded-full blur-[100px] opacity-30 pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-primary/10 rounded-full blur-[80px] opacity-25 pointer-events-none" aria-hidden="true" />
       
       <div className="container mx-auto relative z-10">
         <div className="max-w-6xl mx-auto">

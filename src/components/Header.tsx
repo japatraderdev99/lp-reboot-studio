@@ -38,7 +38,7 @@ const Header = () => {
 
         <Button 
           size="lg" 
-          className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-semibold text-sm px-6 py-5 shadow-lg hover:shadow-orange transition-all duration-300 hover:scale-[1.02]"
+          className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-semibold text-sm px-6 py-5 shadow-lg hover:shadow-orange transition-all duration-300 hover:scale-[1.02] min-w-[200px] min-h-[44px]"
           onClick={() => {
             const url = getHotmartUrlWithParams("https://pay.hotmart.com/A102890720L");
             window.location.href = url;
