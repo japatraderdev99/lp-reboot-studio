@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import BotpressChatbot from "@/components/BotpressChatbot";
 
 // Lazy load non-critical sections for better initial load
 const CasesSection = lazy(() => import("@/components/CasesSection"));
@@ -42,6 +43,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <HeroSection />
+      <BotpressChatbot />
       {showBelowFold ? (
         <>
           <Suspense fallback={<LoadingFallback height="600px" />}>
