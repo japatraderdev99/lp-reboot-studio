@@ -1,40 +1,17 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { getHotmartUrlWithParams } from "@/lib/utm-tracker";
 
 const HeroSection = () => {
-  const videoContainerRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
-    let script: HTMLScriptElement | null = null;
-    
-    const loadVideoPlayer = () => {
-      // Load VTurb SmartPlayer script (new winning VSL)
-      script = document.createElement("script");
-      script.src = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/692f30b27fbe07d9ce4080a7/v4/player.js";
-      script.async = true;
-      document.head.appendChild(script);
-
-      // Create vturb-smartplayer element
-      if (videoContainerRef.current && !videoContainerRef.current.querySelector('vturb-smartplayer')) {
-        const player = document.createElement('vturb-smartplayer');
-        player.setAttribute('id', 'vid-692f30b27fbe07d9ce4080a7');
-        player.style.display = 'block';
-        player.style.margin = '0 auto';
-        player.style.width = '100%';
-        videoContainerRef.current.appendChild(player);
-      }
-    };
-
-    // Load immediately for faster video start
-    if (document.readyState === 'complete') {
-      loadVideoPlayer();
-    } else {
-      window.addEventListener('load', loadVideoPlayer, { once: true });
-    }
+    // Load VTurb SDK script
+    const script = document.createElement("script");
+    script.src = "https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js";
+    script.async = true;
+    document.head.appendChild(script);
 
     return () => {
-      if (script && document.head.contains(script)) {
+      if (document.head.contains(script)) {
         document.head.removeChild(script);
       }
     };
@@ -57,19 +34,26 @@ const HeroSection = () => {
             Método validado em 3000+ clínicas para converter mais leads em pacientes
           </p>
 
-          {/* VSL Container - Fixed aspect ratio to prevent CLS */}
+          {/* VSL Container - Iframe embed for better mobile compatibility */}
           <div className="relative w-full max-w-5xl mx-auto mb-6 sm:mb-8 md:mb-12">
             <div 
-              className="relative rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl aspect-video"
-              style={{ contain: 'strict', isolation: 'isolate' }}
+              id="ifr_6930a75d30e3e1f31709f2d5_wrapper" 
+              className="w-full rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none z-10" />
-              
               <div 
-                ref={videoContainerRef} 
-                className="absolute inset-0 w-full h-full z-20"
-                style={{ maxHeight: '100%', maxWidth: '100%' }}
-              />
+                id="ifr_6930a75d30e3e1f31709f2d5_aspect"
+                className="relative"
+                style={{ paddingTop: '56.25%' }}
+              >
+                <iframe
+                  id="ifr_6930a75d30e3e1f31709f2d5"
+                  frameBorder={0}
+                  allowFullScreen
+                  src={`https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/6930a75d30e3e1f31709f2d5/v4/embed.html${window.location.search || '?'}&vl=${encodeURIComponent(window.location.href)}`}
+                  className="absolute top-0 left-0 w-full h-full"
+                  referrerPolicy="origin"
+                />
+              </div>
             </div>
           </div>
 
