@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 
@@ -11,38 +11,59 @@ const MethodologySection = lazy(() => import("@/components/MethodologySection"))
 const GuaranteeSection = lazy(() => import("@/components/GuaranteeSection"));
 const Footer = lazy(() => import("@/components/Footer"));
 
-const LoadingFallback = () => (
-  <div className="w-full py-12 flex items-center justify-center">
-    <div className="animate-pulse text-muted-foreground">Carregando...</div>
+// Minimal skeleton that reserves space to prevent CLS
+const LoadingFallback = ({ height = "400px" }: { height?: string }) => (
+  <div className="w-full flex items-center justify-center" style={{ minHeight: height, contentVisibility: 'auto' }}>
+    <div className="text-muted-foreground/50 text-sm">Carregando...</div>
   </div>
 );
 
 const Index = () => {
+  const [showBelowFold, setShowBelowFold] = useState(false);
+
+  // Defer below-fold content loading to reduce TBT
+  useEffect(() => {
+    const timer = requestIdleCallback ? 
+      requestIdleCallback(() => setShowBelowFold(true), { timeout: 1500 }) :
+      setTimeout(() => setShowBelowFold(true), 800);
+    
+    return () => {
+      if (requestIdleCallback) cancelIdleCallback(timer as number);
+      else clearTimeout(timer as unknown as number);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <HeroSection />
-      <Suspense fallback={<LoadingFallback />}>
-        <CasesSection />
-      </Suspense>
-      <Suspense fallback={<LoadingFallback />}>
-        <TestimonialsSection />
-      </Suspense>
-      <Suspense fallback={<LoadingFallback />}>
-        <ProblemsSection />
-      </Suspense>
-      <Suspense fallback={<LoadingFallback />}>
-        <CredibilitySection />
-      </Suspense>
-      <Suspense fallback={<LoadingFallback />}>
-        <MethodologySection />
-      </Suspense>
-      <Suspense fallback={<LoadingFallback />}>
-        <GuaranteeSection />
-      </Suspense>
-      <Suspense fallback={<LoadingFallback />}>
-        <Footer />
-      </Suspense>
+      {showBelowFold ? (
+        <>
+          <Suspense fallback={<LoadingFallback height="600px" />}>
+            <CasesSection />
+          </Suspense>
+          <Suspense fallback={<LoadingFallback height="400px" />}>
+            <TestimonialsSection />
+          </Suspense>
+          <Suspense fallback={<LoadingFallback height="500px" />}>
+            <ProblemsSection />
+          </Suspense>
+          <Suspense fallback={<LoadingFallback height="700px" />}>
+            <CredibilitySection />
+          </Suspense>
+          <Suspense fallback={<LoadingFallback height="600px" />}>
+            <MethodologySection />
+          </Suspense>
+          <Suspense fallback={<LoadingFallback height="400px" />}>
+            <GuaranteeSection />
+          </Suspense>
+          <Suspense fallback={<LoadingFallback height="200px" />}>
+            <Footer />
+          </Suspense>
+        </>
+      ) : (
+        <div style={{ minHeight: '3000px' }} />
+      )}
     </div>
   );
 };

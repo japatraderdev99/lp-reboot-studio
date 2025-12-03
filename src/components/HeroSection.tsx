@@ -26,15 +26,14 @@ const HeroSection = () => {
       }
     };
 
-    // Defer video player loading to reduce main-thread work
-    if ('requestIdleCallback' in window) {
-      (window as Window).requestIdleCallback(loadVideoPlayer, { timeout: 2000 });
+    // Load immediately for faster video start
+    if (document.readyState === 'complete') {
+      loadVideoPlayer();
     } else {
-      setTimeout(loadVideoPlayer, 1000);
+      window.addEventListener('load', loadVideoPlayer, { once: true });
     }
 
     return () => {
-      // Cleanup script on unmount
       if (script && document.head.contains(script)) {
         document.head.removeChild(script);
       }
@@ -42,10 +41,8 @@ const HeroSection = () => {
   }, []);
   return (
     <section className="min-h-screen pt-24 md:pt-32 pb-12 md:pb-20 px-4 md:px-6 relative overflow-hidden">
-      {/* Enhanced Glow Effects - Fixed dimensions to prevent CLS */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/20 rounded-full blur-[120px] opacity-40 pointer-events-none" aria-hidden="true" />
-      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-primary/15 rounded-full blur-[100px] opacity-30 pointer-events-none" aria-hidden="true" />
-      <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-primary/10 rounded-full blur-[80px] opacity-25 pointer-events-none" aria-hidden="true" />
+      {/* Simplified Glow Effects - Single element for performance */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/15 rounded-full blur-[100px] opacity-30 pointer-events-none" aria-hidden="true" />
       
       <div className="container mx-auto relative z-10">
         <div className="max-w-6xl mx-auto">
@@ -57,21 +54,21 @@ const HeroSection = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-base sm:text-lg md:text-xl text-center text-foreground/70 mb-12 md:mb-16 max-w-4xl mx-auto animate-fade-in leading-relaxed font-light px-4" style={{animationDelay: '0.2s'}}>
+          <p className="text-base sm:text-lg md:text-xl text-center text-foreground/70 mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed font-light px-4">
             Método f5 validado em 3000+ clínicas odontológicas: transforme leads frios em pacientes recorrentes usando a metodologia que gera receita previsível e escalável no mercado odontológico
           </p>
 
-          {/* VSL Container */}
-          <div className="relative max-w-5xl mx-auto mb-8 md:mb-12 animate-scale-in px-2" style={{animationDelay: '0.4s'}}>
-            <div className="relative rounded-xl md:rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl">
+          {/* VSL Container - Fixed aspect ratio to prevent CLS */}
+          <div className="relative max-w-5xl mx-auto mb-8 md:mb-12 px-2">
+            <div className="relative rounded-xl md:rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl" style={{ aspectRatio: '16/9', minHeight: '300px' }}>
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none z-10" />
               
-              <div ref={videoContainerRef} className="relative z-20" />
+              <div ref={videoContainerRef} className="relative z-20 w-full h-full" />
             </div>
           </div>
 
           {/* CTA */}
-          <div className="max-w-2xl mx-auto mb-12 md:mb-16 animate-fade-in px-4" style={{animationDelay: '0.5s'}}>
+          <div className="max-w-2xl mx-auto mb-12 md:mb-16 px-4">
           <Button 
             size="lg" 
             className="w-full bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-bold text-sm sm:text-base md:text-lg lg:text-xl py-5 sm:py-6 md:py-7 lg:py-8 px-6 md:px-8 rounded-xl shadow-xl hover:shadow-orange transition-all duration-300 hover:scale-[1.02] whitespace-normal leading-tight"
@@ -85,7 +82,7 @@ const HeroSection = () => {
           </div>
 
           {/* Benefits Grid - Responsive */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 max-w-6xl mx-auto animate-fade-in px-2" style={{animationDelay: '0.6s'}}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 max-w-6xl mx-auto px-2">
             {[
               "Método validado em +500 clínicas",
               "Aumento de 60% na conversão comprovado",

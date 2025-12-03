@@ -103,16 +103,16 @@ const MethodologySection = () => {
               <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                 <div className="card-glow rounded-xl md:rounded-2xl overflow-hidden h-full">
                   <div className="flex flex-col gap-4 md:gap-5 p-4 md:p-5 h-full">
-                    {/* Thumbnail Vertical */}
-                    <div className="relative w-full h-48 sm:h-56 md:h-64 flex-shrink-0 rounded-lg overflow-hidden border border-white/[0.06]">
+                    {/* Thumbnail Vertical - Fixed aspect ratio */}
+                    <div className="relative w-full flex-shrink-0 rounded-lg overflow-hidden border border-white/[0.06]" style={{ aspectRatio: '3/4' }}>
                       <img 
                         src={step.thumbnail} 
                         alt={`${step.module} - ${step.title}`}
                         className="w-full h-full object-contain"
                         loading="lazy"
                         decoding="async"
-                        width="600"
-                        height="800"
+                        width="300"
+                        height="400"
                       />
                     </div>
 

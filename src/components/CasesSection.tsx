@@ -104,15 +104,15 @@ const CasesSection = () => {
             {mainCases.map((caseItem, index) => (
               <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                 <div className="card-glow rounded-xl md:rounded-2xl overflow-hidden h-full">
-                  <div className="relative h-36 md:h-48 overflow-hidden">
+                    <div className="relative h-36 md:h-48 overflow-hidden" style={{ aspectRatio: '2/1' }}>
                     <img 
                       src={caseItem.image} 
                       alt={caseItem.title}
                       className="w-full h-full object-cover"
                       loading="lazy"
                       decoding="async"
-                      width="800"
-                      height="400"
+                      width="400"
+                      height="200"
                     />
                     <div className="absolute top-3 left-3 md:top-4 md:left-4 bg-primary/90 backdrop-blur-sm px-2 py-1 md:px-3 md:py-1 rounded-full text-[10px] md:text-xs font-bold">
                       {caseItem.badge}

@@ -53,15 +53,15 @@ const CredibilitySection = () => {
 
           {/* Right Column - Image with Floating Stats */}
           <div className="relative px-2 order-1 lg:order-2">
-            <div className="relative rounded-2xl md:rounded-3xl overflow-hidden">
+            <div className="relative rounded-2xl md:rounded-3xl overflow-hidden" style={{ aspectRatio: '3/4' }}>
               <img 
                 src={fernandoMachado} 
                 alt="Fernando Machado - Diretor Comercial f5 estratégia"
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover"
                 loading="lazy"
                 decoding="async"
-                width="600"
-                height="800"
+                width="400"
+                height="533"
               />
               
               {/* Floating Stats - Compact and sophisticated */}
