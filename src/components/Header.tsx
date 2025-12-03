@@ -13,6 +13,10 @@ const Header = () => {
               src={f5Logo} 
               alt="f5 estratégia" 
               className="w-full h-full object-contain"
+              width="56"
+              height="56"
+              loading="eager"
+              fetchPriority="high"
             />
           </div>
         </div>

@@ -118,41 +118,19 @@ All colors MUST be HSL.
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: relative;
+    /* Simplified background for better performance */
+    background: linear-gradient(180deg, hsl(0 0% 3%) 0%, hsl(0 0% 5%) 100%);
   }
 
-  /* Luxury Background - Sophisticated Orange & Black Glossy Gradient with HIGH CONTRAST */
+  /* Simplified gradient overlay - single pseudo-element for performance */
   body::before {
     content: "";
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      radial-gradient(ellipse at 50% 100%, hsl(16 100% 12% / 0.4) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 50%, hsl(16 90% 10% / 0.25) 0%, transparent 50%),
-      radial-gradient(ellipse at 20% 30%, hsl(16 85% 8% / 0.2) 0%, transparent 45%);
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 100%, hsl(16 100% 10% / 0.25) 0%, transparent 50%);
     z-index: 0;
     pointer-events: none;
-  }
-
-  /* Glossy Orange Glow Layers - HIGH INTENSITY Luxury Style */
-  body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      linear-gradient(180deg, 
-        hsl(0 0% 0% / 1) 0%,
-        hsl(0 0% 0% / 0.98) 20%,
-        hsl(0 0% 0% / 0.95) 50%,
-        hsl(16 100% 10% / 0.3) 100%
-      );
-    z-index: 0;
-    pointer-events: none;
+    will-change: auto;
   }
 
   /* Ensure content is above background texture */
@@ -183,39 +161,60 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  /* Animations */
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+  /* Content visibility for performance */
+  .content-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
   }
 
-  .animate-slide-up {
-    animation: slideUp 0.6s ease-out forwards;
+  /* Animations - Only run when not in reduced motion and after load */
+  @media (prefers-reduced-motion: no-preference) {
+    .animate-fade-in {
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    .animate-slide-up {
+      animation: slideUp 0.5s ease-out forwards;
+    }
+
+    .animate-scale-in {
+      animation: scaleIn 0.4s ease-out forwards;
+    }
+
+    .animate-glow {
+      animation: glow 3s ease-in-out infinite;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in,
+    .animate-slide-up,
+    .animate-scale-in,
+    .animate-glow {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
   }
 
-  .animate-scale-in {
-    animation: scaleIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  }
-
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite;
-  }
-
-  /* Luxury Hover Effects */
+  /* Luxury Hover Effects - GPU accelerated */
   .hover-luxury {
-    transition: var(--transition-luxury);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
   }
 
   .hover-luxury:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) translateZ(0);
     box-shadow: var(--shadow-glow);
   }
 
   .hover-scale {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s ease;
+    will-change: transform;
   }
 
   .hover-scale:hover {
-    transform: scale(1.02);
+    transform: scale(1.02) translateZ(0);
   }
 
   /* Glass Morphism */
