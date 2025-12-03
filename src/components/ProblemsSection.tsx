@@ -58,13 +58,13 @@ const ProblemsSection = () => {
           })}
         </div>
 
-        <div className="text-center">
+        <div className="text-center px-4">
           <Button 
             size="lg" 
-            className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-bold text-base px-8 py-6 rounded-xl shadow-xl transition-all hover:scale-[1.02]"
+            className="w-full sm:w-auto bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80 text-white font-bold text-sm md:text-base px-6 md:px-8 py-5 md:py-6 rounded-xl shadow-xl transition-all hover:scale-[1.02]"
             onClick={() => window.open('https://pay.kiwify.com.br/mCqb3Yk', '_blank')}
           >
-            QUERO RESOLVER ESSES PROBLEMAS →
+            QUERO RESOLVER ESSES PROBLEMAS
           </Button>
         </div>
       </div>
