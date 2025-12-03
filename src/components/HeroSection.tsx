@@ -6,25 +6,36 @@ const HeroSection = () => {
   const videoContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Load VTurb SmartPlayer script
-    const script = document.createElement("script");
-    script.src = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/ab-test/690c76b0e275067893450aee/player.js";
-    script.async = true;
-    document.head.appendChild(script);
+    let script: HTMLScriptElement | null = null;
+    
+    const loadVideoPlayer = () => {
+      // Load VTurb SmartPlayer script
+      script = document.createElement("script");
+      script.src = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/ab-test/690c76b0e275067893450aee/player.js";
+      script.async = true;
+      document.head.appendChild(script);
 
-    // Create vturb-smartplayer element
-    if (videoContainerRef.current && !videoContainerRef.current.querySelector('vturb-smartplayer')) {
-      const player = document.createElement('vturb-smartplayer');
-      player.setAttribute('id', 'ab-690c76b0e275067893450aee');
-      player.style.display = 'block';
-      player.style.margin = '0 auto';
-      player.style.width = '100%';
-      videoContainerRef.current.appendChild(player);
+      // Create vturb-smartplayer element
+      if (videoContainerRef.current && !videoContainerRef.current.querySelector('vturb-smartplayer')) {
+        const player = document.createElement('vturb-smartplayer');
+        player.setAttribute('id', 'ab-690c76b0e275067893450aee');
+        player.style.display = 'block';
+        player.style.margin = '0 auto';
+        player.style.width = '100%';
+        videoContainerRef.current.appendChild(player);
+      }
+    };
+
+    // Defer video player loading to reduce main-thread work
+    if ('requestIdleCallback' in window) {
+      (window as Window).requestIdleCallback(loadVideoPlayer, { timeout: 2000 });
+    } else {
+      setTimeout(loadVideoPlayer, 1000);
     }
 
     return () => {
       // Cleanup script on unmount
-      if (document.head.contains(script)) {
+      if (script && document.head.contains(script)) {
         document.head.removeChild(script);
       }
     };
