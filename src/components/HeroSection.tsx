@@ -1,15 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { getHotmartUrlWithParams } from "@/lib/utm-tracker";
 
 const HeroSection = () => {
-  const [iframeSrc, setIframeSrc] = useState<string>("");
-
   useEffect(() => {
-    // Set iframe URL after mount to avoid SSR issues
-    const search = window.location.search || '?';
-    const vl = encodeURIComponent(window.location.href);
-    setIframeSrc(`https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/6930a75d30e3e1f31709f2d5/v4/embed.html${search}&vl=${vl}`);
+    // Load VTurb player script - mais estável no mobile
+    const script = document.createElement("script");
+    script.src = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/6930a75d30e3e1f31709f2d5/v4/player.js";
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
   }, []);
 
   return (
@@ -30,29 +35,13 @@ const HeroSection = () => {
             Método validado em 3000+ clínicas para converter mais leads em pacientes
           </p>
 
-          {/* VSL Container - Iframe embed for better mobile compatibility */}
+          {/* VSL Container - VTurb Smartplayer */}
           <div className="relative w-full max-w-5xl mx-auto mb-6 sm:mb-8 md:mb-12">
-            <div 
-              id="ifr_6930a75d30e3e1f31709f2d5_wrapper" 
-              className="w-full rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl"
-            >
-              <div 
-                id="ifr_6930a75d30e3e1f31709f2d5_aspect"
-                className="relative"
-                style={{ paddingTop: '56.25%' }}
-              >
-                {iframeSrc && (
-                  <iframe
-                    id="ifr_6930a75d30e3e1f31709f2d5"
-                    frameBorder={0}
-                    allowFullScreen
-                    src={iframeSrc}
-                    className="absolute top-0 left-0 w-full h-full"
-                    referrerPolicy="origin"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  />
-                )}
-              </div>
+            <div className="w-full rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl">
+              <vturb-smartplayer 
+                id="vid-6930a75d30e3e1f31709f2d5" 
+                style={{ display: 'block', margin: '0 auto', width: '100%' }}
+              />
             </div>
           </div>
 
