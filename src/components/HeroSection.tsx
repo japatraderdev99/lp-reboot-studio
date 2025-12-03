@@ -40,29 +40,32 @@ const HeroSection = () => {
     };
   }, []);
   return (
-    <section className="min-h-screen pt-24 md:pt-32 pb-12 md:pb-20 px-4 md:px-6 relative overflow-hidden">
+    <section className="min-h-screen pt-20 sm:pt-24 md:pt-32 pb-12 md:pb-20 px-3 sm:px-4 md:px-6 relative overflow-hidden">
       {/* Simplified Glow Effects - Single element for performance */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/15 rounded-full blur-[100px] opacity-30 pointer-events-none" aria-hidden="true" />
       
       <div className="container mx-auto relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Main Headline */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-center mb-6 md:mb-8 animate-slide-up leading-[1.15] tracking-tight px-2">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-center mb-4 sm:mb-6 md:mb-8 animate-slide-up leading-[1.15] tracking-tight">
             Transforme Sua Secretária em{" "}
             <span className="text-gradient">Máquina de Vendas</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center text-foreground/80 mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed font-normal px-4">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center text-foreground/80 mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-normal px-2">
             Método validado em 3000+ clínicas para converter mais leads em pacientes
           </p>
 
           {/* VSL Container - Fixed aspect ratio to prevent CLS */}
-          <div className="relative w-full max-w-5xl mx-auto mb-8 md:mb-12 px-0 sm:px-2">
-            <div className="relative rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl aspect-video">
+          <div className="relative w-full max-w-5xl mx-auto mb-6 sm:mb-8 md:mb-12">
+            <div 
+              className="relative rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl"
+              style={{ paddingBottom: '56.25%', position: 'relative', height: 0 }}
+            >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none z-10" />
               
-              <div ref={videoContainerRef} className="relative z-20 w-full h-full" />
+              <div ref={videoContainerRef} className="absolute inset-0 z-20 w-full h-full" />
             </div>
           </div>
 
