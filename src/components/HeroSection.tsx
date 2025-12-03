@@ -53,7 +53,7 @@ const HeroSection = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-base sm:text-lg md:text-xl text-center text-foreground/70 mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed font-light px-4">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center text-foreground/80 mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed font-normal px-4">
             Método validado em 3000+ clínicas para converter mais leads em pacientes
           </p>
 
