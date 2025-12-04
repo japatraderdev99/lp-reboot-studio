@@ -25,11 +25,16 @@ const HeroSection = () => {
       <div className="container mx-auto relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Main Headline */}
-          <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-center mb-4 sm:mb-6 md:mb-8 animate-slide-up leading-[1.15] tracking-tight px-2">
+          <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-center mb-3 sm:mb-4 md:mb-6 animate-slide-up leading-[1.15] tracking-tight px-2">
             <span className="text-gradient drop-shadow-lg">Assista o Vídeo Abaixo</span>{" "}
-            <span className="block mt-1 sm:mt-2">Para Descobrir Como Transformar Sua Secretária em Uma</span>{" "}
-            <span className="text-gradient drop-shadow-lg">Máquina de Vendas</span>
+            <span className="block mt-1 sm:mt-2">Para Descobrir Como Transformar Sua CRC em Uma</span>{" "}
+            <span className="text-gradient drop-shadow-lg">Máquina de Vendas em 30 Dias</span>
           </h1>
+          
+          {/* Sub-headline */}
+          <p className="text-center text-foreground/60 text-sm md:text-base mb-4 sm:mb-6 md:mb-8 px-4 max-w-2xl mx-auto">
+            O método que já aumentou a conversão de <strong className="text-primary">+3.000 clínicas odontológicas</strong> no Brasil
+          </p>
 
           {/* VSL Container - VTurb Smartplayer */}
           <div className="relative w-full max-w-5xl mx-auto mb-6 sm:mb-8 md:mb-12">
@@ -58,10 +63,10 @@ const HeroSection = () => {
           {/* Benefits Grid - Responsive */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 max-w-6xl mx-auto px-2">
             {[
-              "Método validado em +500 clínicas",
-              "Aumento de 60% na conversão comprovado",
-              "Resultados em até 30 dias",
-              "Sistema que fatura R$ 2M+/ano"
+              "Método validado em +3.000 clínicas",
+              "Aumento de 60% na conversão em 30 dias",
+              "Sistema usado por redes que faturam R$2M+/ano",
+              "Garantia de 30 dias ou seu dinheiro de volta"
             ].map((benefit, index) => (
               <div 
                 key={index} 

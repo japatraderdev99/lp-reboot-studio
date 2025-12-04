@@ -4,12 +4,15 @@ import HeroSection from "@/components/HeroSection";
 import BotpressChatbot from "@/components/BotpressChatbot";
 
 // Lazy load non-critical sections for better initial load
+const ProblemsSection = lazy(() => import("@/components/ProblemsSection"));
+const ProblemDeepeningSection = lazy(() => import("@/components/ProblemDeepeningSection"));
+const SolutionSection = lazy(() => import("@/components/SolutionSection"));
 const CasesSection = lazy(() => import("@/components/CasesSection"));
 const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
-const ProblemsSection = lazy(() => import("@/components/ProblemsSection"));
-const CredibilitySection = lazy(() => import("@/components/CredibilitySection"));
 const MethodologySection = lazy(() => import("@/components/MethodologySection"));
+const CredibilitySection = lazy(() => import("@/components/CredibilitySection"));
 const GuaranteeSection = lazy(() => import("@/components/GuaranteeSection"));
+const FAQSection = lazy(() => import("@/components/FAQSection"));
 const Footer = lazy(() => import("@/components/Footer"));
 
 // Minimal skeleton that reserves space to prevent CLS
@@ -46,30 +49,40 @@ const Index = () => {
       <BotpressChatbot />
       {showBelowFold ? (
         <>
+          {/* FUNIL: Problema → Causa → Solução → Prova → Produto → Garantia → FAQ */}
+          <Suspense fallback={<LoadingFallback height="400px" />}>
+            <ProblemsSection />
+          </Suspense>
+          <Suspense fallback={<LoadingFallback height="400px" />}>
+            <ProblemDeepeningSection />
+          </Suspense>
+          <Suspense fallback={<LoadingFallback height="400px" />}>
+            <SolutionSection />
+          </Suspense>
           <Suspense fallback={<LoadingFallback height="600px" />}>
             <CasesSection />
           </Suspense>
           <Suspense fallback={<LoadingFallback height="400px" />}>
             <TestimonialsSection />
           </Suspense>
-          <Suspense fallback={<LoadingFallback height="500px" />}>
-            <ProblemsSection />
+          <Suspense fallback={<LoadingFallback height="600px" />}>
+            <MethodologySection />
           </Suspense>
           <Suspense fallback={<LoadingFallback height="700px" />}>
             <CredibilitySection />
           </Suspense>
-          <Suspense fallback={<LoadingFallback height="600px" />}>
-            <MethodologySection />
-          </Suspense>
           <Suspense fallback={<LoadingFallback height="400px" />}>
             <GuaranteeSection />
+          </Suspense>
+          <Suspense fallback={<LoadingFallback height="400px" />}>
+            <FAQSection />
           </Suspense>
           <Suspense fallback={<LoadingFallback height="200px" />}>
             <Footer />
           </Suspense>
         </>
       ) : (
-        <div style={{ minHeight: '3000px' }} />
+        <div style={{ minHeight: '4000px' }} />
       )}
     </div>
   );
