@@ -5,27 +5,27 @@ import { getHotmartUrlWithParams } from "@/lib/utm-tracker";
 const problems = [
   {
     icon: TrendingDown,
-    title: "40% dos leads NUNCA recebem primeiro atendimento",
+    title: "Leads que somem no WhatsApp sem resposta",
   },
   {
     icon: DollarSign,
-    title: "60% das vendas estão mofando no CRM há meses",
+    title: "Taxa de conversão baixa mesmo investindo em marketing",
   },
   {
     icon: Users,
-    title: "Leads do Meta/Instagram viram fantasmas em 24h",
+    title: "CRC que não consegue converter oportunidades",
   },
   {
     icon: BarChart3,
-    title: "WhatsApp é ignorado e você não sabe o que enviar",
+    title: "Leads desqualificados que não fecham",
   },
   {
     icon: Target,
-    title: "Consultas marcadas = no-show = agenda vazia",
+    title: "Falta de processo comercial estruturado",
   },
   {
     icon: UserX,
-    title: "A concorrente fecha em 5 minutos, você demora dias",
+    title: "Concorrente fecha em 5 minutos, você demora dias",
   }
 ];
 
@@ -33,13 +33,13 @@ const ProblemsSection = () => {
   return (
     <section className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl md:text-6xl font-black text-center mb-6 leading-tight">
-          Você Perde Vendas Todos os Dias
-          <span className="text-gradient block mt-2">e Nem Percebe...</span>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-6 leading-tight">
+          Você Reconhece Esses Problemas
+          <span className="text-gradient block mt-2">na Sua Clínica?</span>
         </h2>
         
-        <p className="text-center text-foreground/60 mb-16 max-w-2xl mx-auto text-lg">
-          Se você já perdeu uma venda e não sabe por quê, este curso foi feito para você.
+        <p className="text-center text-foreground/60 mb-12 md:mb-16 max-w-2xl mx-auto text-base md:text-lg">
+          Se você identificou <strong className="text-foreground">pelo menos 2 desses problemas</strong>, continue lendo...
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">

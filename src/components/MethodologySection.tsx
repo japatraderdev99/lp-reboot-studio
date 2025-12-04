@@ -14,6 +14,8 @@ const methodologySteps = [
     title: "FUNDAMENTOS",
     module: "Módulo 1",
     thumbnail: modulo1,
+    duration: "~2h de conteúdo",
+    result: "Entender o perfil ideal de cliente",
     items: [
       "ICP Real vs ICP Imaginado",
       "Os 3 Jogos Empresariais",
@@ -25,6 +27,8 @@ const methodologySteps = [
     title: "CANAIS DE CONVERSÃO",
     module: "Módulo 2",
     thumbnail: modulo2,
+    duration: "~3h de conteúdo",
+    result: "Dominar todos os canais de entrada",
     items: [
       "Script Meta/Instagram",
       "Conversão Google em 5 min",
@@ -36,6 +40,8 @@ const methodologySteps = [
     title: "ENGAJAMENTO & FOLLOW-UP",
     module: "Módulo 3",
     thumbnail: modulo3,
+    duration: "~2.5h de conteúdo",
+    result: "Nunca mais perder lead por falta de follow-up",
     items: [
       "Fato Novo",
       "BANT & SPIN Selling",
@@ -47,6 +53,8 @@ const methodologySteps = [
     title: "RAPPORT & CONEXÃO",
     module: "Módulo 4",
     thumbnail: modulo4,
+    duration: "~2h de conteúdo",
+    result: "Aumentar 60% a conversão com conexão",
     items: [
       "Regra dos 5 Minutos (+60% conversão)",
       "Gerando Conexão Verdadeira",
@@ -58,6 +66,8 @@ const methodologySteps = [
     title: "FUNIL & JORNADA DE COMPRA",
     module: "Módulo 5",
     thumbnail: modulo5,
+    duration: "~3h de conteúdo",
+    result: "Eliminar no-show e desistências",
     items: [
       "6 Etapas do Funil (MQL → Fechamento)",
       "Metáfora dos Reinos",
@@ -69,6 +79,8 @@ const methodologySteps = [
     title: "FECHAMENTO INFALÍVEL",
     module: "Módulo 6",
     thumbnail: modulo6,
+    duration: "~2.5h de conteúdo",
+    result: "Fechar mais vendas com confiança",
     items: [
       "Roteiro de Fechamento Completo",
       "Quebra de Objeções",
@@ -122,11 +134,13 @@ const MethodologySection = () => {
                         <span className="bg-primary/10 text-primary px-2.5 py-0.5 rounded-md font-bold text-xs border border-primary/20">
                           {step.phase}
                         </span>
+                        <span className="text-xs text-foreground/50">{step.duration}</span>
                       </div>
                       <h3 className="text-base sm:text-lg md:text-xl font-bold text-primary mb-1">
                         {step.title}
                       </h3>
-                      <p className="text-xs text-foreground/50 mb-3">{step.module}</p>
+                      <p className="text-xs text-foreground/50 mb-2">{step.module}</p>
+                      <p className="text-xs text-primary/80 mb-3 font-medium">✓ {step.result}</p>
                       <ul className="space-y-1.5">
                         {step.items.map((item, itemIndex) => (
                           <li key={itemIndex} className="flex items-start gap-2 text-xs sm:text-sm text-foreground/60">
