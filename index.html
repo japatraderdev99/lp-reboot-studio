@@ -28,26 +28,26 @@
     <!-- Preload critical font file for LCP -->
     <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2" as="font" type="font/woff2" crossorigin>
     
-    <!-- Critical CSS for above-the-fold content - improves FCP -->
+    <!-- Critical CSS for above-the-fold content - improves FCP and LCP -->
     <style>
       @font-face{font-family:'Inter';font-style:normal;font-weight:400 900;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2) format('woff2')}
       *,*::before,*::after{box-sizing:border-box;border-width:0;border-style:solid}
       html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-      body{margin:0;line-height:inherit;background:linear-gradient(180deg,hsl(0 0% 3%) 0%,hsl(0 0% 5%) 100%);color:#fff;-webkit-font-smoothing:antialiased}
+      body{margin:0;line-height:inherit;background:linear-gradient(180deg,hsl(0 0% 3%) 0%,hsl(0 0% 5%) 100%);color:#fff;-webkit-font-smoothing:antialiased;text-rendering:optimizeSpeed}
       body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at 50% 100%,hsl(16 100% 10%/.25) 0%,transparent 50%);z-index:0;pointer-events:none}
-      #root{position:relative;z-index:1}
+      #root{position:relative;z-index:1;contain:layout style}
       h1,h2,h3{margin:0;font-weight:700;letter-spacing:-0.02em}
-      h1{font-size:clamp(2rem,5vw,4rem);line-height:1.1}
+      h1{font-size:clamp(1.25rem,5vw,3.75rem);line-height:1.15;contain:layout}
       p{margin:0}
       button{font-family:inherit;cursor:pointer}
       img{max-width:100%;height:auto}
       
       /* Header critical */
-      header{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+      header{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06);contain:layout style}
       header>div:first-child{position:absolute;inset:0;background:rgba(8,8,8,.8)}
       
-      /* Hero critical */
-      .min-h-screen{min-height:100vh}
+      /* Hero critical - LCP optimized */
+      .min-h-screen{min-height:100vh;contain:layout}
       .pt-24{padding-top:6rem}
       .pb-12{padding-bottom:3rem}
       .px-4{padding-left:1rem;padding-right:1rem}
@@ -64,11 +64,11 @@
       .font-black{font-weight:900}
       .leading-tight{line-height:1.15}
       
-      /* Text gradient */
-      .text-gradient{background:linear-gradient(135deg,hsl(16 100% 60%) 0%,hsl(16 89% 54%) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+      /* Text gradient - LCP element */
+      .text-gradient{background:linear-gradient(135deg,hsl(16 100% 60%) 0%,hsl(16 89% 54%) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;contain:paint}
       
-      /* Video container placeholder */
-      .aspect-video{aspect-ratio:16/9}
+      /* Video container placeholder with fixed dimensions */
+      .aspect-video{aspect-ratio:16/9;contain:strict}
       .rounded-xl{border-radius:.75rem}
       .border{border-width:1px;border-color:rgba(255,255,255,.06)}
       .shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
@@ -88,6 +88,11 @@
       .justify-between{justify-content:space-between}
       .gap-3{gap:.75rem}
       .grid{display:grid}
+      
+      /* Prevent CLS on benefits grid */
+      .grid.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+      @media(min-width:640px){.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+      @media(min-width:1024px){.lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
     </style>
     
     <!-- Preload critical font CSS and file -->
