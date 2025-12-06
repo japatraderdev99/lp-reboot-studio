@@ -56,7 +56,7 @@ const HeroSection = () => {
               window.location.href = url;
             }}
           >
-            QUERO CONVERTER MAIS LEADS AGORA →
+            QUERO CONVERTER MAIS PACIENTES AGORA →
           </Button>
           </div>
 
