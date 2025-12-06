@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { getHotmartUrlWithParams } from "@/lib/utm-tracker";
-import modulo1 from "@/assets/modulo1.jpg";
-import modulo2 from "@/assets/modulo2.jpg";
-import modulo3 from "@/assets/modulo3.jpg";
-import modulo4 from "@/assets/modulo4.jpg";
-import modulo5 from "@/assets/modulo5.jpg";
-import modulo6 from "@/assets/modulo6.jpg";
+import modulo1 from "@/assets/modulo1.webp";
+import modulo2 from "@/assets/modulo2.webp";
+import modulo3 from "@/assets/modulo3.webp";
+import modulo4 from "@/assets/modulo4.webp";
+import modulo5 from "@/assets/modulo5.webp";
+import modulo6 from "@/assets/modulo6.webp";
 
 const methodologySteps = [
   {
