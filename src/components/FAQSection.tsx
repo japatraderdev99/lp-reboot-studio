@@ -36,8 +36,9 @@ const faqs = [
 ];
 
 const FAQSection = () => {
+  // data-section attribute for chatbot trigger
   return (
-    <section className="py-12 md:py-20 px-4 md:px-6">
+    <section data-section="faq" className="py-12 md:py-20 px-4 md:px-6">
       <div className="container mx-auto max-w-3xl">
         <div className="text-center mb-8 md:mb-12">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full mb-4 md:mb-6">
