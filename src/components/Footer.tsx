@@ -1,4 +1,4 @@
-import f5Logo from "@/assets/f5-logo.webp";
+import f5Logo from "@/assets/f5-logo.png";
 
 const Footer = () => {
   return (
