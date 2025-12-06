@@ -60,8 +60,8 @@ const HeroSection = () => {
           </Button>
           </div>
 
-          {/* Benefits Grid - Responsive */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 max-w-6xl mx-auto px-2">
+          {/* Benefits Grid - Responsive with fixed min-height to prevent CLS */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 max-w-6xl mx-auto px-2 min-h-[280px] sm:min-h-[140px] lg:min-h-[80px]">
             {[
               "Método validado em +3.000 clínicas",
               "Aumento de 60% na conversão em 30 dias",
@@ -70,7 +70,7 @@ const HeroSection = () => {
             ].map((benefit, index) => (
               <div 
                 key={index} 
-                className="group card-glow p-4 md:p-5 rounded-xl cursor-default"
+                className="group card-glow p-4 md:p-5 rounded-xl cursor-default min-h-[60px] md:min-h-[70px]"
               >
                 <div className="flex items-start gap-2.5">
                   <span className="text-primary mt-0.5 text-base font-bold group-hover:scale-110 transition-transform duration-300 flex-shrink-0">✓</span>
