@@ -36,12 +36,12 @@ const HeroSection = () => {
             O método que já aumentou a conversão de <strong className="text-primary">+3.000 clínicas odontológicas</strong> no Brasil
           </p>
 
-          {/* VSL Container - VTurb Smartplayer */}
+          {/* VSL Container - VTurb Smartplayer with fixed aspect ratio to prevent CLS */}
           <div className="relative w-full max-w-5xl mx-auto mb-6 sm:mb-8 md:mb-12">
-            <div className="w-full rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl">
+            <div className="w-full rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden border border-white/[0.06] shadow-2xl aspect-video bg-black/20">
               <vturb-smartplayer 
                 id="vid-6930a75d30e3e1f31709f2d5" 
-                style={{ display: 'block', margin: '0 auto', width: '100%' }}
+                style={{ display: 'block', margin: '0 auto', width: '100%', height: '100%' }}
               />
             </div>
           </div>
