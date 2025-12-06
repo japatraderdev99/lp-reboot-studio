@@ -52,7 +52,7 @@ const BotpressChatbot = () => {
       setShowTrigger(true);
     }, 7000);
 
-    // Or show when reaching last section (FAQ/Footer)
+    // Or show when reaching the 3rd section (ProblemsSection or similar)
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -65,12 +65,13 @@ const BotpressChatbot = () => {
       { threshold: 0.1 }
     );
 
-    // Observe FAQ section or Footer
+    // Observe 3rd section - look for sections by index or specific selector
     const checkForSection = () => {
-      const faqSection = document.querySelector('[data-section="faq"]');
-      const footer = document.querySelector('footer');
-      if (faqSection) observer.observe(faqSection);
-      if (footer) observer.observe(footer);
+      const sections = document.querySelectorAll('main > section, section[class*="py-"]');
+      // Get the 3rd section (index 2)
+      if (sections.length >= 3) {
+        observer.observe(sections[2]);
+      }
     };
 
     // Check after a delay to ensure sections are rendered
@@ -99,17 +100,17 @@ const BotpressChatbot = () => {
   return (
     <button
       onClick={handleTriggerClick}
-      className="fixed bottom-4 right-4 z-50 flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105 animate-fade-in group"
+      className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 animate-fade-in group border-2 border-primary-foreground/20"
       aria-label="Abrir chat com consultor"
     >
       <div className="relative">
-        <MessageCircle className="w-5 h-5" />
-        <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse" />
+        <MessageCircle className="w-7 h-7" />
+        <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-green-500 rounded-full animate-pulse border-2 border-primary" />
       </div>
-      <span className="text-sm font-medium hidden sm:inline">
-        Consultor ao vivo
+      <span className="text-base font-bold hidden sm:inline">
+        Fale com um Consultor
       </span>
-      <span className="text-sm font-medium sm:hidden">
+      <span className="text-base font-bold sm:hidden">
         Dúvidas?
       </span>
     </button>
