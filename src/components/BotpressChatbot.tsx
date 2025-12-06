@@ -12,26 +12,36 @@ const BotpressChatbot = () => {
       return;
     }
 
-    // Inject main script
-    const injectScript = document.createElement('script');
-    injectScript.id = 'botpress-webchat-inject';
-    injectScript.src = 'https://cdn.botpress.cloud/webchat/v3.3/inject.js';
-    injectScript.defer = true;
-    document.head.appendChild(injectScript);
+    // Use requestIdleCallback to load during browser idle time
+    const loadScripts = () => {
+      // Inject main script with async for non-blocking load
+      const injectScript = document.createElement('script');
+      injectScript.id = 'botpress-webchat-inject';
+      injectScript.src = 'https://cdn.botpress.cloud/webchat/v3.3/inject.js';
+      injectScript.async = true;
+      document.head.appendChild(injectScript);
 
-    // Inject config script after main script loads
-    injectScript.onload = () => {
-      const configScript = document.createElement('script');
-      configScript.id = 'botpress-webchat-config';
-      configScript.src = 'https://files.bpcontent.cloud/2025/11/02/08/20251102080919-OZ6VRDMJ.js';
-      configScript.defer = true;
-      document.head.appendChild(configScript);
-      
-      configScript.onload = () => {
-        setIsLoaded(true);
-        setIsOpen(true);
+      // Inject config script after main script loads
+      injectScript.onload = () => {
+        const configScript = document.createElement('script');
+        configScript.id = 'botpress-webchat-config';
+        configScript.src = 'https://files.bpcontent.cloud/2025/11/02/08/20251102080919-OZ6VRDMJ.js';
+        configScript.async = true;
+        document.head.appendChild(configScript);
+        
+        configScript.onload = () => {
+          setIsLoaded(true);
+          setIsOpen(true);
+        };
       };
     };
+
+    // Load during idle time for better performance
+    if ('requestIdleCallback' in window) {
+      (window as Window & { requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => void }).requestIdleCallback(loadScripts, { timeout: 2000 });
+    } else {
+      setTimeout(loadScripts, 100);
+    }
   }, [isLoaded]);
 
   const handleTriggerClick = () => {
