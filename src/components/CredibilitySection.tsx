@@ -1,5 +1,5 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import fernandoMachado from "@/assets/fernando-machado.png";
+import fernandoMachado from "@/assets/fernando-machado.webp";
 
 const CredibilitySection = () => {
   const stats = [
