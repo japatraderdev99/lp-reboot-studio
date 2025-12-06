@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import f5Logo from "@/assets/f5-logo.webp";
+import f5Logo from "@/assets/f5-logo.png";
 import { getHotmartUrlWithParams } from "@/lib/utm-tracker";
 
 const Header = () => {
