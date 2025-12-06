@@ -64,24 +64,24 @@ const CredibilitySection = () => {
                 height="533"
               />
               
-              {/* Floating Stats - Compact and sophisticated */}
+              {/* Floating Stats - All on the LEFT side to not cover the face */}
               <div className="absolute top-2 left-2 md:top-4 md:left-4 glass-card px-2 py-1.5 md:px-3 md:py-2 rounded-lg backdrop-blur-xl border border-white/20 shadow-2xl hover:scale-105 transition-transform">
                 <div className="text-sm sm:text-base md:text-xl font-black text-gradient leading-none">+15 anos</div>
                 <div className="text-[8px] sm:text-[9px] md:text-[10px] text-foreground/70 leading-tight mt-0.5">Mercado<br/>Odontológico</div>
               </div>
               
-              <div className="absolute top-1/4 right-2 md:right-4 glass-card px-2 py-1.5 md:px-3 md:py-2 rounded-lg backdrop-blur-xl border border-white/20 shadow-2xl hover:scale-105 transition-transform">
+              <div className="absolute top-1/4 left-2 md:left-4 glass-card px-2 py-1.5 md:px-3 md:py-2 rounded-lg backdrop-blur-xl border border-white/20 shadow-2xl hover:scale-105 transition-transform">
                 <div className="text-sm sm:text-base md:text-xl font-black text-gradient leading-none">R$ 2M+</div>
                 <div className="text-[8px] sm:text-[9px] md:text-[10px] text-foreground/70 leading-tight mt-0.5">Vendas<br/>Estruturadas</div>
               </div>
               
-              <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 left-2 md:left-4 glass-card px-2 py-1.5 md:px-3 md:py-2 rounded-lg backdrop-blur-xl border border-white/20 shadow-2xl hover:scale-105 transition-transform">
+              <div className="absolute top-1/2 left-2 md:left-4 glass-card px-2 py-1.5 md:px-3 md:py-2 rounded-lg backdrop-blur-xl border border-white/20 shadow-2xl hover:scale-105 transition-transform">
                 <div className="text-sm sm:text-base md:text-xl font-black text-gradient leading-none">500+</div>
                 <div className="text-[8px] sm:text-[9px] md:text-[10px] text-foreground/70 leading-tight mt-0.5">CRCs<br/>Treinadas</div>
               </div>
 
-              {/* Name Label - Bottom - More compact */}
-              <div className="absolute bottom-2 right-2 md:bottom-4 md:right-4 bg-background/95 backdrop-blur-sm px-2 py-1 md:px-3 md:py-1.5 rounded-lg border border-primary/30 shadow-2xl">
+              {/* Name Label - Bottom LEFT */}
+              <div className="absolute bottom-2 left-2 md:bottom-4 md:left-4 bg-background/95 backdrop-blur-sm px-2 py-1 md:px-3 md:py-1.5 rounded-lg border border-primary/30 shadow-2xl">
                 <p className="font-bold text-[10px] md:text-xs leading-tight">Fernando Machado</p>
                 <p className="text-[8px] md:text-[10px] text-primary leading-tight">Diretor Comercial<br/>f5 estratégia</p>
               </div>
